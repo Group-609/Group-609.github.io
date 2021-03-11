@@ -1307,7 +1307,7 @@ function _emscripten_asm_const_ii(code, a0) {
  return ASM_CONSTS[code](a0);
 }
 STATIC_BASE = GLOBAL_BASE;
-STATICTOP = STATIC_BASE + 3271248;
+STATICTOP = STATIC_BASE + 3271904;
 __ATINIT__.push({
  func: (function() {
   __GLOBAL__sub_I_AccessibilityScriptingClasses_cpp();
@@ -3237,7 +3237,7 @@ __ATINIT__.push({
   ___emscripten_environ_constructor();
  })
 });
-var STATIC_BUMP = 3271248;
+var STATIC_BUMP = 3271904;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
@@ -3903,6 +3903,9 @@ function _JS_WebRequest_SetResponseHandler(request, arg, onresponse) {
 }
 function _JS_WebRequest_SetTimeout(request, timeout) {
  wr.requestInstances[request].timeout = timeout;
+}
+function _ShowMessage(message) {
+ window.alert(Pointer_stringify(message));
 }
 var webSocketInstances = [];
 function _SocketClose(socketInstance) {
@@ -19792,6 +19795,7 @@ Module.asmLibraryArg = {
  "_JS_WebRequest_SetRequestHeader": _JS_WebRequest_SetRequestHeader,
  "_JS_WebRequest_SetResponseHandler": _JS_WebRequest_SetResponseHandler,
  "_JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
+ "_ShowMessage": _ShowMessage,
  "_SocketClose": _SocketClose,
  "_SocketCreate": _SocketCreate,
  "_SocketError": _SocketError,
