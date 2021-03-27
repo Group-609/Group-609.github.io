@@ -35,6 +35,7 @@ else
             var post = qs.parse(body);
             console.log(post.say);
             console.log(post.to);
+            request.connection.close();
         });
     }
 });
