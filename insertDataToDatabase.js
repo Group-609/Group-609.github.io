@@ -1,8 +1,12 @@
 function insertData(message)
 {
   window.alert("Inserting data into database");  
-  //Run script from backend - we cannot just run The run(message) here because this file is hosted in github and we need to send a request or sth to the backend website
-  //run(message);
+  const url = "https://coopgame.herokuapp.com/app.js";
+  const data = {say: "hi", to:"mom"}
+
+  $.post(url,data, function(data, status){
+    console.log("${data} and status is ${status}")
+  });
 }
 
 function addToGlobalScope()
