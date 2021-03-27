@@ -12,6 +12,6 @@ function insertData(message)
 function addToGlobalScope()
 {
   window.insertData = insertData;
-  window.alert("Added test to global scope"); 
+  window.alert("Added insertData to global scope"); 
 }
 
