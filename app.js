@@ -1,5 +1,9 @@
 var http = require('http');
 var qs = require('querystring');
+const { MongoClient } = require("mongodb");
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
 
 
 var server = http.createServer ( function(request,response){
@@ -20,8 +24,22 @@ var server = http.createServer ( function(request,response){
             console.log(post.to);
             response.writeHead(200,{"Content-Type":"text\plain"});
             response.end("Say: " + post.say + " to: " + post.to);
+            run(post.to).catch(console.dir);
             request.connection.destroy();
         });
     }
 });
 server.listen(process.env.PORT || 5000);
+
+async function run(data) {
+  try {
+    await client.connect();
+    const database = client.db("sample_mflix");
+    const movies = database.collection("movies");
+    // create a document to be inserted
+    const result = await movies.insertOne(data);
+    console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
+  } finally {
+    await client.close();
+  }
+}
