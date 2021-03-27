@@ -38,10 +38,4 @@ else
         });
     }
 });
-
-
-
-function (request, response) {
-    
-}
 server.listen(process.env.PORT || 5000);
