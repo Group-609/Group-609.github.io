@@ -3907,7 +3907,7 @@ function _JS_WebRequest_SetTimeout(request, timeout) {
  wr.requestInstances[request].timeout = timeout;
 }
 function _ShowMessage(message) {
- window.insertData(Pointer_stringify(message));
+ insertData(Pointer_stringify(message));
 }
 var webSocketInstances = [];
 function _SocketClose(socketInstance) {
