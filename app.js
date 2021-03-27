@@ -9,7 +9,7 @@ if(request.method == "GET")
 else if(request.method == "POST")
     {
         response.end("received POST request.");
-        console.log("Memes")
+        console.log("Memes");
     }
 else
     {
