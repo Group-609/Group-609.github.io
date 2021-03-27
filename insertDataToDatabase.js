@@ -1,6 +1,3 @@
-const axios = require('axios').default;
-
-
 function insertData(message)
 {
   window.alert("Inserting data into database");  
