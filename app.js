@@ -9,23 +9,8 @@ const client = new MongoClient(uri);
 
 var server = http.createServer ( function(request,response){
   //Used for Kaffeine
-  if (request.method == 'Get') {
-    var body = '';
-
-    request.on('data', function (data) {
-        body += data;
-
-        if (body.length > 100000)
-            request.connection.destroy();
-    });
-
-    request.on('end', function () {
-        var post = qs.parse(body);
-        console.log(post.say);
-        console.log(post.to);
-        response.writeHead(200,{"Content-Type":"text\plain"});
-        //request.connection.destroy();
-    });
+  if (request.method == 'GET') {
+    response.writeHead(200, {"Content-Type": "application/json"});
 }
 
     if (request.method == 'POST') {
