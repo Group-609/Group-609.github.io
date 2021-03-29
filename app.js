@@ -46,7 +46,7 @@ async function run(data) {
     let ts = Date.now();
 
     let date_ob = new Date(ts);
-    let minute = date_ob.getMinutes;
+    let minute = date_ob.getMinutes();
     let hour = date_ob.getHours();
     let day = date_ob.getDate();
     let month = date_ob.getMonth() + 1;
