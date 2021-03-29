@@ -1,12 +1,33 @@
 var http = require('http');
 var qs = require('querystring');
 const { MongoClient } = require("mongodb");
+// This app uses Kaffeine to keep it alive http://kaffeine.herokuapp.com/
 // Replace the uri string with your MongoDB deployment's connection string.
 const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 
 var server = http.createServer ( function(request,response){
+  //Used for Kaffeine
+  if (request.method == 'Get') {
+    var body = '';
+
+    request.on('data', function (data) {
+        body += data;
+
+        if (body.length > 100000)
+            request.connection.destroy();
+    });
+
+    request.on('end', function () {
+        var post = qs.parse(body);
+        console.log(post.say);
+        console.log(post.to);
+        response.writeHead(200,{"Content-Type":"text\plain"});
+        //request.connection.destroy();
+    });
+}
+
     if (request.method == 'POST') {
         var body = '';
 
