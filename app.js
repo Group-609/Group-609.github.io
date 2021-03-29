@@ -34,11 +34,11 @@ server.listen(process.env.PORT || 5000);
 async function run(data) {
   try {
     await client.connect();
-    const database = client.db("sample_mflix");
-    const movies = database.collection("movies");
+    const database = client.db("P6");
+    const gameData = database.collection("GameData");
     // create a document to be inserted
     const doc = { name: "Red", town: data};
-    const result = await movies.insertOne(doc);
+    const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
     await client.close();
