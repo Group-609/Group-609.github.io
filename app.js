@@ -31,7 +31,6 @@ var server = http.createServer ( function(request,response){
             response.writeHead(200,{"Content-Type":"text\plain"});
             response.end("Say: " + post.say + " to: " + post.to);
             run(post.say).catch(console.dir);
-            //request.connection.destroy();
         });
     }
 });
@@ -43,7 +42,7 @@ async function run(data) {
     const database = client.db("P6");
     const gameData = database.collection("GameData");
     // create a document to be inserted
-    const doc = { name: "Red", town: data};
+    const doc = { name: "Red", town: data, timeOfCollection: Date.now()};
     const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
