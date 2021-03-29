@@ -42,7 +42,18 @@ async function run(data) {
     const database = client.db("P6");
     const gameData = database.collection("GameData");
     // create a document to be inserted
-    const doc = { name: "Red", town: data, timeOfCollection: Date.now()};
+    // current timestamp in milliseconds
+    let ts = Date.now();
+
+    let date_ob = new Date(ts);
+    let day = date_ob.getDate();
+    let month = date_ob.getMonth() + 1;
+    let year = date_ob.getFullYear();
+
+    // prints date & time in YYYY-MM-DD format
+    let date = year + "-" + month + "-" + day;
+
+    const doc = { name: "Red", town: data, timeOfCollection: date};
     const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {

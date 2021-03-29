@@ -1309,7 +1309,7 @@ function _emscripten_asm_const_ii(code, a0) {
  return ASM_CONSTS[code](a0);
 }
 STATIC_BASE = GLOBAL_BASE;
-STATICTOP = STATIC_BASE + 3424400;
+STATICTOP = STATIC_BASE + 3424320;
 __ATINIT__.push({
  func: (function() {
   __GLOBAL__sub_I_AccessibilityScriptingClasses_cpp();
@@ -3239,7 +3239,7 @@ __ATINIT__.push({
   ___emscripten_environ_constructor();
  })
 });
-var STATIC_BUMP = 3424400;
+var STATIC_BUMP = 3424320;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
@@ -3987,9 +3987,6 @@ function _SocketSend(socketInstance, ptr, length) {
 function _SocketState(socketInstance) {
  var socket = webSocketInstances[socketInstance];
  return socket.socket.readyState;
-}
-function _Warn(str) {
- console.warn(Pointer_stringify(str));
 }
 function ___atomic_compare_exchange_8(ptr, expected, desiredl, desiredh, weak, success_memmodel, failure_memmodel) {
  var pl = HEAP32[ptr >> 2];
@@ -20000,7 +19997,6 @@ Module.asmLibraryArg = {
  "_SocketRecvLength": _SocketRecvLength,
  "_SocketSend": _SocketSend,
  "_SocketState": _SocketState,
- "_Warn": _Warn,
  "__ZSt18uncaught_exceptionv": __ZSt18uncaught_exceptionv,
  "___atomic_compare_exchange_8": ___atomic_compare_exchange_8,
  "___atomic_fetch_add_8": ___atomic_fetch_add_8,
