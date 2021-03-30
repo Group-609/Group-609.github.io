@@ -5,6 +5,7 @@ const { MongoClient } = require("mongodb");
 // Replace the uri string with your MongoDB deployment's connection string.
 const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&keepAlive=1&connectTimeoutMS=30000";
 const client = new MongoClient(uri);
+client.connect();
 
 var server = http.createServer ( function(request,response){
   //Used for Kaffeine
@@ -38,7 +39,6 @@ server.listen(process.env.PORT || 5000);
 
 async function run(data) {
   try {
-    await client.connect();
     const database = client.db("P6");
     const gameData = database.collection("GameData");
     // create a document to be inserted
@@ -59,7 +59,6 @@ async function run(data) {
     const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
-    console.log('Closing client');
-    await client.close();
+    console.log('Tried to insert data');
   }
 }
