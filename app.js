@@ -3,7 +3,7 @@ var qs = require('querystring');
 const { MongoClient } = require("mongodb");
 // This app uses Kaffeine to keep it alive http://kaffeine.herokuapp.com/
 // Replace the uri string with your MongoDB deployment's connection string.
-const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&keepAlive=1&connectTimeoutMS=30000";
 const client = new MongoClient(uri);
 
 
@@ -52,10 +52,9 @@ async function run(data) {
     let month = date_ob.getMonth() + 1;
     let year = date_ob.getFullYear();
     
-
     // prints date & time in YYYY-MM-DD format
     let date = year + "-" + month + "-" + day + "-" + hour + ":" + minute;
-
+    //var JSONdata = JSON.parse(data);
     const doc = { name: "Red", town: data, timeOfCollection: date};
     const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
