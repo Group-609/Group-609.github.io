@@ -27,8 +27,8 @@ var server = http.createServer ( function(request,response){
 
     request.on('end', function () {
         var post = qs.parse(body);
-        console.log(post.say);
-        console.log(post.to);
+        //console.log(post.say);
+        //console.log(post.to);
         response.writeHead(200,{"Content-Type":"text\plain"});
         response.end("Say: " + post.say + " to: " + post.to);
         run(post.to).catch(console.dir);
