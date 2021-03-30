@@ -3909,9 +3909,6 @@ function _JS_WebRequest_SetTimeout(request, timeout) {
 function _Save(message) {
  insertData(Pointer_stringify(message));
 }
-function _ShowMessage(message) {
- insertData(Pointer_stringify(message));
-}
 var webSocketInstances = [];
 function _SocketClose(socketInstance) {
  var socket = webSocketInstances[socketInstance];
@@ -19993,7 +19990,6 @@ Module.asmLibraryArg = {
  "_JS_WebRequest_SetResponseHandler": _JS_WebRequest_SetResponseHandler,
  "_JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
  "_Save": _Save,
- "_ShowMessage": _ShowMessage,
  "_SocketClose": _SocketClose,
  "_SocketCreate": _SocketCreate,
  "_SocketError": _SocketError,
