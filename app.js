@@ -6,33 +6,33 @@ const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&keepAlive=1&connectTimeoutMS=30000";
 const client = new MongoClient(uri);
 
-
 var server = http.createServer ( function(request,response){
   //Used for Kaffeine
   if (request.method == 'GET') {
     response.writeHead(200, {"Content-Type": "application/json"});
-}
+  }
 
-    if (request.method == 'POST') {
-        var body = '';
+  if (request.method == 'POST') {
+    
+    var body = '';
 
-        request.on('data', function (data) {
-            body += data;
+    request.on('data', function (data) {
+        body += data;
 
-            // Too much POST data, kill the connection!
-            if (body.length > 10000000)
-                request.connection.destroy();
-        });
+        // Too much POST data, kill the connection!
+        if (body.length > 10000000)
+            request.connection.destroy();
+    });
 
-        request.on('end', function () {
-            var post = qs.parse(body);
-            console.log(post.say);
-            console.log(post.to);
-            response.writeHead(200,{"Content-Type":"text\plain"});
-            response.end("Say: " + post.say + " to: " + post.to);
-            run(post.say).catch(console.dir);
-        });
-    }
+    request.on('end', function () {
+        var post = qs.parse(body);
+        console.log(post.say);
+        console.log(post.to);
+        response.writeHead(200,{"Content-Type":"text\plain"});
+        response.end("Say: " + post.say + " to: " + post.to);
+        run(post.say).catch(console.dir);
+    });
+  }
 });
 server.listen(process.env.PORT || 5000);
 
@@ -59,6 +59,7 @@ async function run(data) {
     const result = await gameData.insertOne(doc);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
+    console.log('Closing client');
     await client.close();
   }
 }
