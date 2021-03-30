@@ -31,7 +31,7 @@ var server = http.createServer ( function(request,response){
         console.log(post.to);
         response.writeHead(200,{"Content-Type":"text\plain"});
         response.end("Say: " + post.say + " to: " + post.to);
-        run(post.say).catch(console.dir);
+        run(post.to).catch(console.dir);
     });
   }
 });
