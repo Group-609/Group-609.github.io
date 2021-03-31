@@ -55,9 +55,7 @@ async function run(data) {
     // prints date & time in YYYY-MM-DD format
     let date = year + "-" + month + "-" + day + "-" + hour + ":" + minute;
     var JsonData = JSON.parse(data);
-
-    console.log(JsonData);
-    //const doc = { name: "Red", town: data, timeOfCollection: date};
+    //console.log(JsonData);
     const result = await gameData.insertOne(JsonData);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
