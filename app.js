@@ -56,7 +56,7 @@ async function run(data) {
     let date = year + "-" + month + "-" + day + "-" + hour + ":" + minute;
     var JsonData = JSON.parse(data);
 
-    console.log(JSON.stringify(JsonData));
+    console.log(JsonData);
     //const doc = { name: "Red", town: data, timeOfCollection: date};
     const result = await gameData.insertOne(JsonData);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
