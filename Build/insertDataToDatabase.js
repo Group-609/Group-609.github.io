@@ -28,7 +28,8 @@ function getCondition()
     url: myurl,
     dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
     success: (res) => {
-     console.log(res.condition);
+     var object = JSON.parse(res);
+     console.log(object.condition);
     }
   })
   /*
