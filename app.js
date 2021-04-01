@@ -15,10 +15,12 @@ var server = http.createServer ( function(request,response){
       var ddaCount = getDDAConditionCount().catch(console.dir);
       if(controlCount > ddaCount)
       {
+        console.log("Sending response: DDA")
         response.end("DDA");
       }
       else
       {
+        console.log("Sending response: Control")
         response.end("Control");
       }
       
