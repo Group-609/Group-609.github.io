@@ -8,7 +8,6 @@ const client = new MongoClient(uri);
 client.connect();
 
 var server = http.createServer ( function(request,response){
-  console.log(request.method);
   if (request.method == 'GET') {
     console.log("Get request");
     //we request on data so that request on end is called
@@ -21,7 +20,8 @@ var server = http.createServer ( function(request,response){
       {
         console.log("Sending response: DDA");
         var jsonResponse = {"condition":"DDA"};
-        response.end(jsonResponse);
+        response.end(request.query.callback + '('+ JSON.stringify(jsonResponse) + ');');
+        //response.end(jsonResponse);
       }
       else
       {
