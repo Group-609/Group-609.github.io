@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/Group-609/Group-609.github.io#readme",
   "dependencies": {
-    "axios": "^0.21.1",
     "milligram": "^1.4.1",
     "mongodb": "^3.6.4",
     "querystring": "^0.2.1"
