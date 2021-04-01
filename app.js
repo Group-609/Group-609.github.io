@@ -19,12 +19,14 @@ var server = http.createServer ( function(request,response){
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
-        response.end("DDA");
+        var jsonResponse = {"condition":"DDA"};
+        response.end(jsonResponse);
       }
       else
       {
         console.log("Sending response: Control");
-        response.end("Control");
+        var jsonResponse = {"condition":"Control"};
+        response.end(jsonResponse);
       }
     });
   }

@@ -9,9 +9,28 @@ function insertData(message)
 }
 function getCondition()
 {
-  const url = "https://cors.io/?https://coopgame.herokuapp.com/app.js";  //CORS lets us do requests over different web pages
+  /*
+  $.ajax({
+    url:"https://coopgame.herokuapp.com/app.js",
+    dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+    success:function(json){
+        alert("Success: " + json.condition);
+    },
+    error:function(){
+        alert("Error");
+    }      
+  });
+  */
+  
+  const url = "https://coopgame.herokuapp.com/app.js";  
+  /*
   $.get(url, function( data ) {
-    $(".result").html( data );
-    alert( "Going to load the following condition:." + condition);
-  }, "text");
+    alert( "Going to load the following condition:." + $(".result"));
+  }, "json");
+  */
+  $.getJSON("demo_ajax_json.js", function(result){
+    $.each(result, function(i, field){
+      alert( "Going to load the following condition:." + field);
+    });
+  });
 }
