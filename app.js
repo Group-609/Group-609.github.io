@@ -10,13 +10,10 @@ client.connect();
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
     console.log("Get request");
+    //we request on data so that request on end is called
     request.on('data', function (data) {
-      console.log("Get request data");
     });
-
     request.on('end', function () {
-      console.log("Get request end");
-      //getSessionConditionCounts().catch(console.dir);
       var controlCount = getControlConditionCount().catch(console.dir);
       var ddaCount = getDDAConditionCount().catch(console.dir);
       if(controlCount > ddaCount)
@@ -29,14 +26,11 @@ var server = http.createServer ( function(request,response){
         console.log("Sending response: Control");
         response.end("Control");
       }
-      
     });
   }
 
   if (request.method == 'POST') {
-    
     var body = '';
-
     request.on('data', function (data) {
         body += data;
 
@@ -57,17 +51,6 @@ var server = http.createServer ( function(request,response){
 });
 server.listen(process.env.PORT || 5000);
 
-async function getSessionConditionCounts() {
-  const database = client.db("P6");
-  const gameData = database.collection("GameData");
-  const withQuery = { condition: "DDA" };
-  const withoutQuery = { condition: "Control" };
-  const ddaCount= await gameData.countDocuments(withQuery);
-  const controlCount = await gameData.countDocuments(withoutQuery);
-  console.log(`Number of test sessions with the DDA condition: ${ddaCount}`);
-  console.log(`Number of test sessions with the Control condition: ${controlCount}`);
-}
-
 async function getDDAConditionCount() {
   const database = client.db("P6");
   const gameData = database.collection("GameData");
@@ -82,7 +65,7 @@ async function getControlConditionCount() {
   const gameData = database.collection("GameData");
   const query = { condition: "Control" };
   const count = await gameData.countDocuments(query);
-  console.log(`Number of test sessions with the DDA condition: ${count}`);
+  console.log(`Number of test sessions with Control DDA condition: ${count}`);
   return count;
 }
 
