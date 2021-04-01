@@ -56,7 +56,14 @@ async function run(data) {
     let date = year + "-" + month + "-" + day + "-" + hour + ":" + minute;
     var JsonData = JSON.parse(data);
     //console.log(JsonData);
-    const result = await gameData.insertOne(JsonData);
+    // create a query for a movie to update
+    const query = { "sessionStartTime": JsonData.sessionStartTime };
+    const options = {
+      // create a document if no documents match the query
+      upsert: true,
+    };
+    const result = await gameData.replaceOne(query, data, options);
+    //const result = await gameData.insertOne(JsonData);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
     console.log('Tried to insert data');
