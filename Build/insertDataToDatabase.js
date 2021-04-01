@@ -25,12 +25,16 @@ function getCondition()
   const myurl = "https://coopgame.herokuapp.com/app.js";  
   $.ajax({
     method: 'GET',
-    url: myurl,
+    url: myurl + "?callback=?",
     dataType: 'jsonp', //we use jsonp to hack around CORS limitations
-    success: (res) => {
-     var object = JSON.parse(res);
-     alert(object.condition);
-    }
+    success: function(data) {
+      console.log('success');
+      console.log(JSON.stringify(data));
+      alert(JSON.stringify(object));
+    },
+    error:function(err){
+      alert("Error");
+    } 
   })
   /*
   $.get(url, function( data ) {
