@@ -22,15 +22,24 @@ function getCondition()
   });
   */
   
-  const url = "https://coopgame.herokuapp.com/app.js";  
+  const myurl = "https://coopgame.herokuapp.com/app.js";  
+  $.ajax({
+    method: 'GET',
+    url: myurl,
+    dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
+    success: (res) => {
+     console.log(res.condition);
+    }
+  })
   /*
   $.get(url, function( data ) {
     alert( "Going to load the following condition:." + $(".result"));
   }, "json");
-  */
+  
   $.getJSON("demo_ajax_json.js", function(result){
     $.each(result, function(i, field){
       alert( "Going to load the following condition:." + field);
     });
   });
+  */
 }
