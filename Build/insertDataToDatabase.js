@@ -33,7 +33,7 @@ function getCondition()
       alert(JSON.stringify(object));
     },
     error:function(err){
-      alert("Error");
+      alert(err);
     } 
   })
   /*
