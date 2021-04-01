@@ -12,12 +12,8 @@ const gameData = database.collection("GameData");
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
     request.on('end', function () {
-      const withQuery = { condition: "DDA" };
-      const withoutQuery = { condition: "Control" };
-      const ddaCount= await gameData.countDocuments(withQuery);
-      const controlCount = await gameData.countDocuments(withoutQuery);
-      console.log(`Number of test sessions with the DDA condition: ${ddaCount}`);
-      console.log(`Number of test sessions with the Control condition: ${controlCount}`);
+      
+      getSessionConditionCounts().catch(console.dir);
     });
   }
 
@@ -44,6 +40,15 @@ var server = http.createServer ( function(request,response){
   }
 });
 server.listen(process.env.PORT || 5000);
+
+async function getSessionConditionCounts() {
+  const withQuery = { condition: "DDA" };
+  const withoutQuery = { condition: "Control" };
+  const ddaCount= await gameData.countDocuments(withQuery);
+  const controlCount = await gameData.countDocuments(withoutQuery);
+  console.log(`Number of test sessions with the DDA condition: ${ddaCount}`);
+  console.log(`Number of test sessions with the Control condition: ${controlCount}`);
+}
 
 async function run(data) {
   try {
