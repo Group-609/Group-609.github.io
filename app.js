@@ -6,11 +6,19 @@ const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&keepAlive=1&connectTimeoutMS=30000";
 const client = new MongoClient(uri);
 client.connect();
+const database = client.db("P6");
+const gameData = database.collection("GameData");
 
 var server = http.createServer ( function(request,response){
-  //Used for Kaffeine
   if (request.method == 'GET') {
-    response.writeHead(200, {"Content-Type": "application/json"});
+    request.on('end', function () {
+      const withQuery = { condition: "DDA" };
+      const withoutQuery = { condition: "Control" };
+      const ddaCount= await gameData.countDocuments(withQuery);
+      const controlCount = await gameData.countDocuments(withoutQuery);
+      console.log(`Number of test sessions with the DDA condition: ${ddaCount}`);
+      console.log(`Number of test sessions with the Control condition: ${controlCount}`);
+    });
   }
 
   if (request.method == 'POST') {
@@ -39,8 +47,7 @@ server.listen(process.env.PORT || 5000);
 
 async function run(data) {
   try {
-    const database = client.db("P6");
-    const gameData = database.collection("GameData");
+    
     // create a document to be inserted
     // current timestamp in milliseconds
     let ts = Date.now();
