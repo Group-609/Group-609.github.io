@@ -6,8 +6,6 @@ const { MongoClient } = require("mongodb");
 const uri = "mongodb+srv://admin:memes123@cluster0.nlgqu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&keepAlive=1&connectTimeoutMS=30000";
 const client = new MongoClient(uri);
 client.connect();
-const database = client.db("P6");
-const gameData = database.collection("GameData");
 
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
@@ -42,6 +40,8 @@ var server = http.createServer ( function(request,response){
 server.listen(process.env.PORT || 5000);
 
 async function getSessionConditionCounts() {
+  const database = client.db("P6");
+  const gameData = database.collection("GameData");
   const withQuery = { condition: "DDA" };
   const withoutQuery = { condition: "Control" };
   const ddaCount= await gameData.countDocuments(withQuery);
@@ -52,7 +52,8 @@ async function getSessionConditionCounts() {
 
 async function run(data) {
   try {
-    
+    const database = client.db("P6");
+    const gameData = database.collection("GameData");
     // create a document to be inserted
     // current timestamp in milliseconds
     let ts = Date.now();
