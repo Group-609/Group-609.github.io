@@ -62,7 +62,7 @@ async function run(data) {
       // create a document if no documents match the query
       upsert: true,
     };
-    const result = await gameData.replaceOne(query, data, options);
+    const result = await gameData.replaceOne(query, JsonData, options);
     //const result = await gameData.insertOne(JsonData);
     console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
   } finally {
