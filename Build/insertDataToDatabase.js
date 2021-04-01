@@ -30,7 +30,7 @@ function getCondition()
     success: function(data) {
       console.log('success');
       console.log(JSON.stringify(data));
-      alert(JSON.stringify(object));
+      alert("received object: " + JSON.stringify(object));
     },
     error: function (jqXHR, exception) {
       var msg = '';
