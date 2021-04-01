@@ -10,8 +10,18 @@ client.connect();
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
     request.on('end', function () {
+      //getSessionConditionCounts().catch(console.dir);
+      var controlCount = getControlConditionCount().catch(console.dir);
+      var ddaCount = getDDAConditionCount().catch(console.dir);
+      if(controlCount > ddaCount)
+      {
+        response.end("DDA");
+      }
+      else
+      {
+        response.end("Control");
+      }
       
-      getSessionConditionCounts().catch(console.dir);
     });
   }
 
@@ -48,6 +58,24 @@ async function getSessionConditionCounts() {
   const controlCount = await gameData.countDocuments(withoutQuery);
   console.log(`Number of test sessions with the DDA condition: ${ddaCount}`);
   console.log(`Number of test sessions with the Control condition: ${controlCount}`);
+}
+
+async function getDDAConditionCount() {
+  const database = client.db("P6");
+  const gameData = database.collection("GameData");
+  const query = { condition: "DDA" };
+  const count= await gameData.countDocuments(query);
+  console.log(`Number of test sessions with the DDA condition: ${count}`);
+  return count;
+}
+
+async function getControlConditionCount() {
+  const database = client.db("P6");
+  const gameData = database.collection("GameData");
+  const query = { condition: "Control" };
+  const count = await gameData.countDocuments(query);
+  console.log(`Number of test sessions with the DDA condition: ${count}`);
+  return count;
 }
 
 async function run(data) {
