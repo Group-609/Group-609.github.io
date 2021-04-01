@@ -9,7 +9,7 @@ function insertData(message)
 }
 function getCondition()
 {
-  const url = "http://coopgame.herokuapp.com/app.js";  //CORS lets us do requests over different web pages
+  const url = "https://cors.io/?https://coopgame.herokuapp.com/app.js";  //CORS lets us do requests over different web pages
   $.get(url, function( data ) {
     $(".result").html( data );
     alert( "Going to load the following condition:." + condition);
