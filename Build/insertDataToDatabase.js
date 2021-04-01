@@ -23,8 +23,14 @@ function getCondition()
   */
   
   const url = "https://coopgame.herokuapp.com/app.js";  
+  /*
   $.get(url, function( data ) {
     alert( "Going to load the following condition:." + $(".result"));
   }, "json");
-  
+  */
+  $.getJSON("demo_ajax_json.js", function(result){
+    $.each(result, function(i, field){
+      alert( "Going to load the following condition:." + field);
+    });
+  });
 }
