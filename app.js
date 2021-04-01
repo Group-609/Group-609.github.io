@@ -8,6 +8,7 @@ const client = new MongoClient(uri);
 client.connect();
 
 var server = http.createServer ( function(request,response){
+  console.log(request.method);
   if (request.method == 'GET') {
     console.log("Get request");
     //we request on data so that request on end is called
