@@ -64,7 +64,19 @@ async function run(data) {
     };
     const result = await gameData.replaceOne(query, JsonData, options);
     //const result = await gameData.insertOne(JsonData);
-    console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`,);
+    if (result.modifiedCount === 0 && result.upsertedCount === 0) {
+      console.log("No changes made to the collection.");
+    } else {
+      if (result.matchedCount === 1) {
+        console.log("Matched " + result.matchedCount + " documents.");
+      }
+      if (result.modifiedCount === 1) {
+        console.log("Updated one document.");
+      }
+      if (result.upsertedCount === 1) {
+        console.log("Inserted one new document with an _id of " + result.upsertedId._id);
+      }
+    }
   } finally {
     console.log('Tried to insert data');
   }
