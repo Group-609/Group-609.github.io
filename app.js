@@ -20,7 +20,8 @@ var server = http.createServer ( function(request,response){
       {
         console.log("Sending response: DDA");
         var jsonResponse = {"condition":"DDA"};
-        response.end(request.query.callback + '('+ JSON.stringify(jsonResponse) + ');');
+        response.write(request.query.callback + '('+ JSON.stringify(jsonResponse) + ');');
+        response.end();
         //response.end(jsonResponse);
       }
       else
