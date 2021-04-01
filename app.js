@@ -9,18 +9,20 @@ client.connect();
 
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
+    console.log("Get request");
     request.on('end', function () {
+      console.log("Get request end");
       //getSessionConditionCounts().catch(console.dir);
       var controlCount = getControlConditionCount().catch(console.dir);
       var ddaCount = getDDAConditionCount().catch(console.dir);
       if(controlCount > ddaCount)
       {
-        console.log("Sending response: DDA")
+        console.log("Sending response: DDA");
         response.end("DDA");
       }
       else
       {
-        console.log("Sending response: Control")
+        console.log("Sending response: Control");
         response.end("Control");
       }
       
