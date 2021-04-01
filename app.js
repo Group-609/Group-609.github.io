@@ -10,6 +10,10 @@ client.connect();
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
     console.log("Get request");
+    request.on('data', function (data) {
+      console.log("Get request data");
+    });
+
     request.on('end', function () {
       console.log("Get request end");
       //getSessionConditionCounts().catch(console.dir);
