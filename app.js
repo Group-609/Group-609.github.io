@@ -28,7 +28,7 @@ var server = http.createServer ( function(request,response){
       {
         console.log("Sending response: Control");
         var jsonResponse = {"condition":"Control"};
-        response.write(request.query.callback + '('+ JSON.stringify(jsonResponse) + ');');
+        response.write(JSON.stringify(jsonResponse));
         response.end();
       }
     });
