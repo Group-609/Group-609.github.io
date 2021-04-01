@@ -26,10 +26,10 @@ function getCondition()
   $.ajax({
     method: 'GET',
     url: myurl,
-    dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
+    dataType: 'jsonp', //we use jsonp to hack around CORS limitations
     success: (res) => {
      var object = JSON.parse(res);
-     console.log(object.condition);
+     alert(object.condition);
     }
   })
   /*
