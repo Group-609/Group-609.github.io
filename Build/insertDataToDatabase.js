@@ -7,6 +7,11 @@ function insertData(message)
     console.log("${data} and status is ${status}")
   }); 
 }
+function condition()
+{
+  alert("yeet");
+}
+
 function getCondition()
 {
   /*
@@ -25,12 +30,12 @@ function getCondition()
   const myurl = "https://coopgame.herokuapp.com/app.js";  
   $.ajax({
     method: 'GET',
-    url: myurl + "?callback=?",
+    url: myurl + "?callback=condition",
     dataType: 'jsonp', //we use jsonp to hack around CORS limitations
     success: function(data) {
       console.log('success');
       console.log(JSON.stringify(data));
-      alert("received object: " + JSON.stringify(object));
+      alert("received object: " + JSON.stringify(data));
     },
     error: function (jqXHR, exception) {
       var msg = '';
