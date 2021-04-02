@@ -21,9 +21,9 @@ var server = http.createServer ( function(request,response){
       queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
       controlCount =  getControlConditionCount().then(
-        result => getDDAConditionCount().then(
-          res => {
-            if(result > res)
+        controlCount => getDDAConditionCount().then(
+          ddaCount => {
+            if(controlCount > ddaCount)
               {
                 console.log("Sending response: DDA");
                 var jsonResponse = {"condition":"DDA"};
