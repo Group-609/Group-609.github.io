@@ -39,6 +39,7 @@ function getCondition(callback)
           msg = 'Uncaught Error.\n' + jqXHR.responseText;
       }
       console.log(msg);
+      callback("Failed to receive condition from server!");
   }, 
   })
 }
