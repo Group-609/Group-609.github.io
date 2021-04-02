@@ -20,22 +20,28 @@ var server = http.createServer ( function(request,response){
     request.on('end', function () {
       queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
-      controlCount = await getControlConditionCount().catch(console.dir);
-      ddaCount = await getDDAConditionCount().catch(console.dir);
-      if(controlCount > ddaCount)
-      {
-        console.log("Sending response: DDA");
-        var jsonResponse = {"condition":"DDA"};
-        response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
-        response.end();
-      }
-      else
-      {
-        console.log("Sending response: Control");
-        var jsonResponse = {"condition":"Control"};
-        response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
-        response.end();
-      }
+      controlCount =  getControlConditionCount().then(
+        result => getDDAConditionCount().then(
+          res => {
+            if(controlCount > ddaCount)
+              {
+                console.log("Sending response: DDA");
+                var jsonResponse = {"condition":"DDA"};
+                response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
+                response.end();
+              }
+              else
+              {
+                console.log("Sending response: Control");
+                var jsonResponse = {"condition":"Control"};
+                response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
+                response.end();
+              }
+          },
+          err => console.error(`Something went wrong: ${err}`),
+          ),
+        err => console.error(`Something went wrong: ${err}`),);
+      
     });
   }
 
