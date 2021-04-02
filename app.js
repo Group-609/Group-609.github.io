@@ -11,14 +11,16 @@ client.connect();
 var server = http.createServer ( function(request,response){
   if (request.method == 'GET') {
     console.log("Get request");
+    var controlCount;
+    var ddaCount;
     //we request on data so that request on end is called
     request.on('data', function (data) {
-    });
-    request.on('end', function () {
       const queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
-      var controlCount = getControlConditionCount().catch(console.dir);
-      var ddaCount = getDDAConditionCount().catch(console.dir);
+      controlCount = getControlConditionCount().catch(console.dir);
+      ddaCount = getDDAConditionCount().catch(console.dir);
+    });
+    request.on('end', function () {
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
@@ -72,7 +74,7 @@ async function getControlConditionCount() {
   const gameData = database.collection("GameData");
   const query = { condition: "Control" };
   const count = await gameData.countDocuments(query);
-  console.log(`Number of test sessions with Control DDA condition: ${count}`);
+  console.log(`Number of test sessions with Control condition: ${count}`);
   return count;
 }
 
