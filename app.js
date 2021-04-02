@@ -23,7 +23,7 @@ var server = http.createServer ( function(request,response){
       controlCount =  getControlConditionCount().then(
         result => getDDAConditionCount().then(
           res => {
-            if(controlCount > ddaCount)
+            if(result > res)
               {
                 console.log("Sending response: DDA");
                 var jsonResponse = {"condition":"DDA"};
@@ -40,8 +40,8 @@ var server = http.createServer ( function(request,response){
           },
           err => console.error(`Something went wrong: ${err}`),
           ),
-        err => console.error(`Something went wrong: ${err}`),);
-      
+        err => console.error(`Something went wrong: ${err}`),
+        );
     });
   }
 
