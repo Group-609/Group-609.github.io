@@ -19,6 +19,7 @@ function getCondition(callback)
       console.log('success');
       console.log(data.condition);
       condition = data.condition;
+      callback(condition);
     },
     error: function (jqXHR, exception) {
       var msg = '';
@@ -40,5 +41,4 @@ function getCondition(callback)
       console.log(msg);
   }, 
   })
-  callback(condition);
 }

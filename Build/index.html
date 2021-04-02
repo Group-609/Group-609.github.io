@@ -64,8 +64,6 @@
             console.log("Iframe got condition: " + condition);
             unityInstance.SendMessage('ConditionSetter', 'GetCondition', condition);   
           });
-          
-
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
