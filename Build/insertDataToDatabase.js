@@ -8,7 +8,7 @@ function insertData(message)
   }); 
 }
 
-function getCondition()
+function getCondition(callback)
 {
   const myurl = "https://coopgame.herokuapp.com/app.js";  
   $.ajax({
@@ -19,7 +19,6 @@ function getCondition()
       console.log('success');
       console.log(data.condition);
       condition = data.condition;
-      alert("received object: " + JSON.stringify(data));
     },
     error: function (jqXHR, exception) {
       var msg = '';
@@ -41,5 +40,5 @@ function getCondition()
       console.log(msg);
   }, 
   })
-  return condition;
+  callback(condition);
 }

@@ -58,9 +58,14 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          var condition = getCondition(); //Get the condition for the game
-          console.log("Iframe got condition: " + condition);
-          unityInstance.SendMessage('EventSystem', 'GetCondition', condition);
+          //var condition = getCondition(); //Get the condition for the game
+          getCondition(function(condition) {
+            // This function gets called by the function on success
+            console.log("Iframe got condition: " + condition);
+            unityInstance.SendMessage('ConditionSetter', 'GetCondition', condition);   
+          });
+          
+
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
