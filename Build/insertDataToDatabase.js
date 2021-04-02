@@ -7,9 +7,9 @@ function insertData(message)
     console.log("${data} and status is ${status}")
   }); 
 }
-function condition()
+function condition(data)
 {
-  alert("yeet");
+  alert("yeet: " + data);
 }
 
 function getCondition()
@@ -30,7 +30,7 @@ function getCondition()
   const myurl = "https://coopgame.herokuapp.com/app.js";  
   $.ajax({
     method: 'GET',
-    url: myurl + "?callback=condition",
+    url: myurl + "?callback=?",
     dataType: 'jsonp', //we use jsonp to hack around CORS limitations
     success: condition,
     /*function(data) {
