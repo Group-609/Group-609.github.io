@@ -68,19 +68,19 @@ var server = http.createServer ( function(request,response){
 server.listen(process.env.PORT || 5000);
 
 async function getDDAConditionCount() {
-  const database = client.db("P6");
-  const gameData = database.collection("GameData");
-  const query = { condition: "DDA" };
-  const count= await gameData.countDocuments(query);
+  var database = client.db("P6");
+  var gameData = database.collection("GameData");
+  var query = { condition: "DDA" };
+  var count= await gameData.countDocuments(query);
   console.log(`Number of test sessions with the DDA condition: ${count}`);
   return count;
 }
 
 async function getControlConditionCount() {
-  const database = client.db("P6");
-  const gameData = database.collection("GameData");
-  const query = { condition: "Control" };
-  const count = await gameData.countDocuments(query);
+  var database = client.db("P6");
+  var gameData = database.collection("GameData");
+  var query = { condition: "Control" };
+  var count = await gameData.countDocuments(query);
   console.log(`Number of test sessions with Control condition: ${count}`);
   return count;
 }
