@@ -58,7 +58,8 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          getCondition(); //Get the condition for the game
+          var condition = getCondition(); //Get the condition for the game
+          unityInstance.SendMessage('GameManager', 'GetCondition', condition);
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);

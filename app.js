@@ -22,10 +22,9 @@ var server = http.createServer ( function(request,response){
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
-        var jsonResponse = {"result":"success","condition":"DDA"};
+        var jsonResponse = {"condition":"DDA"};
         response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
         response.end();
-        //response.end(jsonResponse);
       }
       else
       {
