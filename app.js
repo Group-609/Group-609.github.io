@@ -16,12 +16,12 @@ var server = http.createServer ( function(request,response){
     var queryObject;
     //we request on data so that request on end is called
     request.on('data', function (data) {
-      queryObject = url.parse(request.url,true).query;
-      console.log(queryObject.callback);
-      controlCount = getControlConditionCount().catch(console.dir);
-      ddaCount = getDDAConditionCount().catch(console.dir);
     });
     request.on('end', function () {
+      queryObject = url.parse(request.url,true).query;
+      console.log(queryObject.callback);
+      controlCount = await getControlConditionCount().catch(console.dir);
+      ddaCount = await getDDAConditionCount().catch(console.dir);
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
