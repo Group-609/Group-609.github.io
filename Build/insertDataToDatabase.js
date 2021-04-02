@@ -32,11 +32,12 @@ function getCondition()
     method: 'GET',
     url: myurl + "?callback=condition",
     dataType: 'jsonp', //we use jsonp to hack around CORS limitations
-    success: function(data) {
+    success: condition,
+    /*function(data) {
       console.log('success');
       console.log(JSON.stringify(data));
       alert("received object: " + JSON.stringify(data));
-    },
+    },*/
     error: function (jqXHR, exception) {
       var msg = '';
       if (jqXHR.status === 0) {
