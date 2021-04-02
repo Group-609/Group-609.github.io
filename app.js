@@ -22,7 +22,7 @@ var server = http.createServer ( function(request,response){
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
-        var jsonResponse = {"condition":"DDA"};
+        var jsonResponse = {"result":"success","condition":"DDA"};
         response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
         response.end();
         //response.end(jsonResponse);
@@ -31,7 +31,7 @@ var server = http.createServer ( function(request,response){
       {
         console.log("Sending response: Control");
         var jsonResponse = {"condition":"Control"};
-        response.write("condition(" + JSON.stringify(jsonResponse) + ");");
+        response.write(queryObject.callback + "(" + JSON.stringify(jsonResponse) + ");");
         response.end();
       }
     });
