@@ -13,9 +13,10 @@ var server = http.createServer ( function(request,response){
     console.log("Get request");
     var controlCount;
     var ddaCount;
+    const queryObject;
     //we request on data so that request on end is called
     request.on('data', function (data) {
-      const queryObject = url.parse(request.url,true).query;
+      queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
       controlCount = getControlConditionCount().catch(console.dir);
       ddaCount = getDDAConditionCount().catch(console.dir);
