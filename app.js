@@ -20,7 +20,7 @@ var server = http.createServer ( function(request,response){
     request.on('end', function () {
       queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
-      controlCount =  getControlConditionCount().then(
+      getControlConditionCount().then(
         controlCount => getDDAConditionCount().then(
           ddaCount => {
             if(controlCount > ddaCount)
