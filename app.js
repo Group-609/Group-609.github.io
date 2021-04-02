@@ -14,13 +14,15 @@ var server = http.createServer ( function(request,response){
     request.on('data', function (data) {
     });
     request.on('end', function () {
+      const queryObject = url.parse(request.url,true).query;
+      console.log(queryObject);
       var controlCount = getControlConditionCount().catch(console.dir);
       var ddaCount = getDDAConditionCount().catch(console.dir);
       if(controlCount > ddaCount)
       {
         console.log("Sending response: DDA");
         var jsonResponse = {"condition":"DDA"};
-        response.write("condition(" + JSON.stringify(jsonResponse) + ");");
+        response.write(queryObject + "(" + JSON.stringify(jsonResponse) + ");");
         response.end();
         //response.end(jsonResponse);
       }
