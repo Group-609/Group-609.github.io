@@ -13,7 +13,7 @@ var server = http.createServer ( function(request,response){
     console.log("Get request");
     var controlCount;
     var ddaCount;
-    const queryObject;
+    var queryObject;
     //we request on data so that request on end is called
     request.on('data', function (data) {
       queryObject = url.parse(request.url,true).query;
