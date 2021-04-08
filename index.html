@@ -27,11 +27,68 @@
           Afterwards, stop filling out the form (but do not close it!) and come back to this page to play through our prototype. 
           When you are done with the game, return to the online form and fill out the rest.</p>
           
-        <p><i>*Include google form here*</i></p>
+        <section class="first-form">
+          <h2>Pre gameplay survey</h2>
+          <form>
+            <div class="input-group">
+              <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
+              <label class="inline" for="salutation-mr">Mr.</label>
+              
+              <input id="salutation-mrs" name="salutation" type="radio" value="Mrs."/>
+              <label class="inline" for="salutation-mrs">Mrs.</label>
+              
+              <input id="salutation-ms" name="salutation" type="radio" value="Ms."/>
+              <label class="inline" for="salutation-ms">Ms.</label>
+            </div>
+            
+            <div class="input-group">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text"/>
+            </div>
+            
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email"/>
+            </div>
+            
+            <div class="input-group">
+              <label for="subject">How can I help you?</label>
+              <select id="subject" name="subject">
+                <option>I have a problem.</option>
+                <option>I have a general question.</option>
+              </select>
+            </div>
+            
+            <div class="input-group">
+              <label for="message">Enter a Message</label>
+              <textarea id="message" name="message" rows="6" cols="65"></textarea>
+            </div>
+            
+            <div class="input-group">
+              <p class="group-label">Please send me:</p>
+              <input id="snacks-pizza" name="snacks" type="checkbox" value="pizza"/>
+              <label class="inline" for="snacks-pizza">Pizza</label>
+              <input id="snacks-cake" name="snacks" type="checkbox" value="cake"/>
+              <label class="inline" for="snacks-cake">Cake</label>
+            </div>
+            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/> <!--- if we want to get any data from user like IP address or sth --->
+            <button type="submit">Send It!</button>
+          </form>
+        </section>  
 
+        <section class="second-form">
+          <h2>Mid gameplay survey</h2>
+          <form>
+            <div class="input-group">
+              <label for="message">Enter a Message</label>
+              <textarea id="message" name="message" rows="6" cols="65"></textarea>
+            </div>
+            
+            <button type="submit">Send It!</button>
+          </form>
+        </section>  
 
-
-        <h2>⚠️Instructions</h2>
+        <h2 onclick="printCollectedData()">⚠️Instructions</h2> 
 
         <p>The game runs best when opened in Firefox. If Firefox is unavailable, Google Chrome is supported too.</p>
 
@@ -64,22 +121,18 @@
             </div>
         </div>
 
-        <h2>After gameplay survey</h2>
-        <form action="https://coopgame.herokuapp.com/app.js" method="POST">
-            <div>
-              <label for="say">What greeting do you want to say?</label>
-              <input name="say" id="say" value="Hi">
+        <section class="third-form">
+          <h2>Post gameplay survey</h2>
+          <form>
+            <div class="input-group">
+              <label for="message">Enter a Message</label>
+              <textarea id="message" name="message" rows="6" cols="65"></textarea>
             </div>
-            <div>
-              <label for="to">Who do you want to say it to?</label>
-              <input name="to" id="to" value="Mom">
-            </div>
-            <div>
-              <button>Send my greetings</button>
-            </div>
+            
+            <button type="submit">Send It!</button>
           </form>
+        </section>  
 
-
+        <script src="saveFirstFormData.js"></script> 
     </div>
-
 </body>
