@@ -43,9 +43,3 @@ function getCondition(callback)
   }, 
   })
 }
-function showSecondForm()
-{
-  var data = { foo: 'bar' }
-  var event = new CustomEvent('myCustomEvent', { detail: data })
-  window.parent.document.dispatchEvent(event)
-}
