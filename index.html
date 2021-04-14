@@ -23,13 +23,26 @@
 
         <h2>📍 Information </h2>
 
-          This study is performed on a pair of participants. Please find another person you can participate in the test with if you have not
-          yet done so. Communication is important; we recommend being in the same room physically or communicating via voice call.
+          <p>We are group 609 from the final semester of Medialogy Bachelor’s programme at Aalborg University Copenhagen. This is a
+          study on video games for our semester project.</p>
 
-          <p></p>The whole procedure should take up to 30 minutes, including 15 minutes of gameplay.</p>
+          <p>You will be presented with a video game prototype. Your
+          in-game data will be recorded.</p>
 
-          <p>If you have any questions, write to the person that contacted you about this study or reach us via e-mail
-           <b>med609kbh2021@create.aau.dk</b></p>
+
+
+          <p>This study is performed on a pair of participants. Please find another person you can participate in the test with if you have not
+          yet done so. Communication is important; we recommend being in the same room physically or communicating via voice call. </p>
+
+          <p>The whole procedure should take up to 30 minutes, including 15 minutes of gameplay.</p>
+
+          <p>All the information collected in the session will be stored until the students’ exam, which shall take place in June
+          2021. We may publish and discuss results from this session in our semester report, but the individual information
+          there will be anonymous.</p>
+
+          <p>The participation is voluntary, and You may withdraw at any point. In case of withdrawal, the group is obliged to
+          destroy Your provided data immediately. If you have any questions, write to the person that contacted you about this study or reach us via e-mail
+          <b>med609kbh2021@create.aau.dk</b></p>
 
 
          
@@ -40,25 +53,24 @@
           When you are done with the game, return to the online form and fill out the rest.</p>
           
         <section class="first-form">
-          <h2>Pre gameplay survey</h2>
-          
+          <!-- <h2>Pre gameplay survey</h2> -->
           <form>
           <div class="input-group">  
-            <label for="age">Please indicate your age</label><input id="age" name="age" type="text" required>
+            <label for="age">Please indicate your age</label>
+            <input id="age" name="age" type="text" required>
           </div>
 
 
             <div class="input-group">
-
                 <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label><br>
+                <label for="male">Male</label>
                 <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label><br>
+                <label for="female">Female</label>
                 <input type="radio" id="other" name="gender" value="other">
                 <label for="other">Other</label>
-
+            </div>
                 
-              <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
+            <!--  <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
               <label class="inline" for="salutation-mr">Mr.</label>
               
               <input id="salutation-mrs" name="salutation" type="radio" value="Mrs."/>
@@ -93,8 +105,9 @@
               <input id="snacks-cake" name="snacks" type="checkbox" value="cake"/>
               <label class="inline" for="snacks-cake">Cake</label>
             </div>
-            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/> <!--- if we want to get any data from user like IP address or sth --->
-            <button type="submit">Send It!</button>
+            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>--> <!--- if we want to get any data from user like IP address or sth --->
+            
+            <button type="submit">Submit</button>
           </form>
         </section>  
 
@@ -106,10 +119,10 @@
             <label class="statement">This HTML Likert scale is easy to use.</label>
             <ul class='likert'>
                 <li><input type="radio" name="Q1" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q1" value=2 required><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q1" value=3 required><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q1" value=4 required><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q1" value=5 required><label for="strong_agree">Strongly agree</label>
+                <li><input type="radio" name="Q1" value=2><label for="disagree">Disagree</label></li>
+                <li><input type="radio" name="Q1" value=3><label for="neutral">Neutral</label></li>
+                <li><input type="radio" name="Q1" value=4><label for="agree">Agree</label></li>
+                <li><input type="radio" name="Q1" value=5><label for="strong_agree">Strongly agree</label>
               </li>
             </ul>
           
@@ -117,10 +130,10 @@
             <label class="statement">This HTML Likert scale is easy to use.</label>
             <ul class='likert'>
                 <li><input type="radio" name="Q2" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q2" value=2 required><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q2" value=3 required><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q2" value=4 required><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q2" value=5 required><label for="strong_agree">Strongly agree</label>
+                <li><input type="radio" name="Q2" value=2><label for="disagree">Disagree</label></li>
+                <li><input type="radio" name="Q2" value=3><label for="neutral">Neutral</label></li>
+                <li><input type="radio" name="Q2" value=4><label for="agree">Agree</label></li>
+                <li><input type="radio" name="Q2" value=5><label for="strong_agree">Strongly agree</label>
               </li>
             </ul>
 
@@ -130,7 +143,7 @@
             </div>
           
             
-            <button type="submit">Send It!</button>
+            <button type="submit">Submit</button>
           </form>
 
 
@@ -172,14 +185,14 @@
 
         
         <section class="third-form">
-          <h2>Post gameplay survey</h2>
+          <!-- <h2>Post gameplay survey</h2> -->
           <form>
             <div class="input-group">
-              <label for="message">Enter a Message</label>
+              <label for="message">If you have any additional comments, please write them down here.</label>
               <textarea id="message" name="message" rows="6" cols="65"></textarea>
             </div>
             
-            <button type="submit">Send It!</button>
+            <button type="submit">Submit</button>
           </form>
         </section>  
 
