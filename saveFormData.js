@@ -2,6 +2,7 @@ var form1Data;
 var form2Data;
 var form3Data;
 
+
 function handleForm1Submit(form) {
     form.preventDefault();
   
@@ -46,7 +47,25 @@ function handleForm3Submit(form) {
     formJSON.snacks = data.getAll('snacks');
     form3Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
+    sendDataToDatabase();
+}
 
+function sendDataToDatabase(){
+    var mergedObject = {
+        form1Data,
+        form2Data,
+        form3Data,
+        game1Data,
+        game2Data
+      };
+    var message = JSON.stringify(mergedObject, null, 2);
+    console.log("Sending data: " + message);
+
+    const url = "https://coopgame.herokuapp.com/app.js";
+    const data = {say: "sent", to: message}
+    $.post(url,data, function(data, status){
+        console.log("${data} and status is ${status}")
+    }); 
 }
 
 
@@ -64,7 +83,9 @@ function printCollectedData()
     var mergedObject = {
         form1Data,
         form2Data,
-        form3Data
+        form3Data,
+        game1Data,
+        game2Data
       };
        
     console.log(JSON.stringify(mergedObject, null, 2));
