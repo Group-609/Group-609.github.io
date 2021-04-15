@@ -53,7 +53,6 @@
           When you are done with the game, return to the online form and fill out the rest.</p>
           
         <section class="first-form">
-          <!-- <h2>Pre gameplay survey</h2> -->
           <form>
           <div class="input-group">  
             <label for="age">Please indicate Your age</label>
@@ -77,8 +76,6 @@
               <option>Other</option>
             </select>
           </div>
-
-
                 
             <!--  <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
               <label class="inline" for="salutation-mr">Mr.</label>
@@ -147,12 +144,11 @@
               </li>
             </ul>
 
-            <div class="input-group">
+          <!--  <div class="input-group">
               <label for="message">Enter a Message</label>
               <textarea id="message" name="message" rows="6" cols="65"></textarea>
-            </div>
+            </div> -->
           
-            
             <button type="submit">Submit</button>
           </form>
 
@@ -193,19 +189,24 @@
             </div>
         </div>
 
-        
-        <section class="third-form">
+
+          <section class="third-form">
           <!-- <h2>Post gameplay survey</h2> -->
           <form>
             <div class="input-group">
-              <label for="message">If you have any additional comments, please write them down here.</label>
-              <textarea id="message" name="message" rows="6" cols="65"></textarea>
+              <label for="issuemessage">If You had experienced any technical issues, please describe them and write how they influenced your gameplay.</label>
+              <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"></textarea>
+            </div>
+
+            <div class="input-group">
+              <label for="feedbackmessage">If you have any additional comments, please write them down here.</label>
+              <textarea id="finalmessage" name="finalmessage" rows="6" cols="65"></textarea>
             </div>
             
             <button type="submit">Submit</button>
           </form>
         </section>  
-    </div> -->
+    </div>
     <script src="saveFormData.js"></script> 
     <script src="showPartsOfTest.js"></script> 
 </body>
