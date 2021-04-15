@@ -6,30 +6,30 @@ window.document.addEventListener('showLastForm', handleEventShowLastForm, false)
 $(".second-form").hide(); 
 $("#html_embed_widget_11018").hide();  //Unity window
 $(".third-form").hide();  
-
+const hideShowTime = 500;
 
 
 function handleEventShowGame(e) {
-  $("#html_embed_widget_11018").show();  //Unity window
-  $(".first-form").hide(); 
+  $("#html_embed_widget_11018").show(hideShowTime);  //Unity window
+  $(".first-form").hide(hideShowTime); 
   console.log(e.detail);
 }
 
 function handleEventShowSecondForm(e) {
-  $("#html_embed_widget_11018").hide();  //Unity window
-  $(".second-form").show(); 
+  $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
+  $(".second-form").show(hideShowTime); 
   console.log(e.detail);
 }
 
 function handleEventShowGameAgain(e) {
-  $("#html_embed_widget_11018").show();  //Unity window
-  $(".second-form").hide(); 
+  $("#html_embed_widget_11018").show(hideShowTime);  //Unity window
+  $(".second-form").hide(hideShowTime); 
   console.log(e.detail);
 }
 
 function handleEventShowLastForm(e) {
-  $("#html_embed_widget_11018").hide();  //Unity window
-  $(".third-form").show();  
+  $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
+  $(".third-form").show(hideShowTime);  
   console.log(e.detail);
 }
 
