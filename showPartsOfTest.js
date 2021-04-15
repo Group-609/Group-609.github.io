@@ -1,7 +1,7 @@
-addEventListener('showGame', handleEventShowGame, false);
-addEventListener('showSecondForm', handleEventShowSecondForm, false);
-addEventListener('showGameAgain', handleEventShowGameAgain, false);
-addEventListener('showLastForm', handleEventShowLastForm, false);
+window.document.addEventListener('showGame', handleEventShowGame, false);
+window.document.addEventListener('showSecondForm', handleEventShowSecondForm, false);
+window.document.addEventListener('showGameAgain', handleEventShowGameAgain, false);
+window.document.addEventListener('showLastForm', handleEventShowLastForm, false);
 
 $(".second-form").hide(); 
 $("#html_embed_widget_11018").hide();  //Unity window
@@ -37,23 +37,23 @@ function handleEventShowLastForm(e) {
 $("#showGame").click(function(){
   var data = { foo: 'showing game' }
   var event = new CustomEvent('showGame', { detail: data })
-  dispatchEvent(event);
+  window.document.dispatchEvent(event);
 }); 
 
 $("#ShowSecondForm").click(function(){
   var data = { foo: 'showing second form' }
   var event = new CustomEvent('showSecondForm', { detail: data })
-  dispatchEvent(event);
+  window.document.dispatchEvent(event);
 }); 
 
 $("#showGameAgain").click(function(){
   var data = { foo: 'showing second form' }
   var event = new CustomEvent('showGameAgain', { detail: data })
-  dispatchEvent(event);
+  window.document.dispatchEvent(event);
 }); 
 
 $("#showLastForm").click(function(){
   var data = { foo: 'showing second form' }
   var event = new CustomEvent('showLastForm', { detail: data })
-  dispatchEvent(event);
+  window.document.dispatchEvent(event);
 }); 
