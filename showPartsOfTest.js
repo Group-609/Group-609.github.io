@@ -1,7 +1,12 @@
-window.document.addEventListener('showGame', handleEventShowGame, false);
-window.document.addEventListener('showSecondForm', handleEventShowSecondForm, false);
-window.document.addEventListener('showGameAgain', handleEventShowGameAgain, false);
-window.document.addEventListener('showLastForm', handleEventShowLastForm, false);
+addEventListener('showGame', handleEventShowGame, false);
+addEventListener('showSecondForm', handleEventShowSecondForm, false);
+addEventListener('showGameAgain', handleEventShowGameAgain, false);
+addEventListener('showLastForm', handleEventShowLastForm, false);
+
+$(".second-form").hide(); 
+$("#html_embed_widget_11018").hide();  //Unity window
+$(".third-form").hide();  
+
 
 
 function handleEventShowGame(e) {
