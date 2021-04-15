@@ -33,11 +33,12 @@ function handleEventShowLastForm(e) {
   console.log(e.detail);
 }
 
+
 //For testing
 $("#showGame").click(function(){
-  var data = { foo: 'showing game' }
-  var event = new CustomEvent('showGame', { detail: data })
-  window.document.dispatchEvent(event);
+    var data = { foo: 'showing game' }
+    var event = new CustomEvent('showGame', { detail: data })
+    window.document.dispatchEvent(event);
 }); 
 
 $("#ShowSecondForm").click(function(){
@@ -49,6 +50,7 @@ $("#ShowSecondForm").click(function(){
 $("#showGameAgain").click(function(){
   var data = { foo: 'showing second form' }
   var event = new CustomEvent('showGameAgain', { detail: data })
+  //We tell the level to reload here
   window.document.dispatchEvent(event);
 }); 
 

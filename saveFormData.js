@@ -9,8 +9,16 @@ function handleForm1Submit(form) {
     const formJSON = Object.fromEntries(data.entries());
     // for multi-selects, we need special handling
     formJSON.snacks = data.getAll('snacks');
+    $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+        formJSON.locationData = data;
+    });
     form1Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
+
+
+    var eventData = { foo: 'showing game' }
+    var event = new CustomEvent('showGame', { detail: eventData });
+    window.document.dispatchEvent(event);
 }
 
 function handleForm2Submit(form) {
@@ -22,6 +30,11 @@ function handleForm2Submit(form) {
     formJSON.snacks = data.getAll('snacks');
     form2Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
+
+    var eventData = { foo: 'showing second form' }
+    var event = new CustomEvent('showGameAgain', { detail: eventData })
+    //We tell the level to reload here
+    window.document.dispatchEvent(event);
 }
 
 function handleForm3Submit(form) {
@@ -33,6 +46,7 @@ function handleForm3Submit(form) {
     formJSON.snacks = data.getAll('snacks');
     form3Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
+
 }
 
 
