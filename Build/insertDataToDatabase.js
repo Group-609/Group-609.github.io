@@ -45,7 +45,14 @@ function getCondition(callback)
 }
 function showSecondForm()
 {
-  var data = { foo: 'bar' }
-  var event = new CustomEvent('myCustomEvent', { detail: data })
+  var data = { foo: 'showing second form' }
+  var event = new CustomEvent('showSecondForm', { detail: data })
+  window.parent.document.dispatchEvent(event)
+}
+
+function showLastForm()
+{
+  var data = { foo: 'showing last form' }
+  var event = new CustomEvent('showLastForm', { detail: data })
   window.parent.document.dispatchEvent(event)
 }
