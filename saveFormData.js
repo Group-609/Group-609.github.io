@@ -16,8 +16,8 @@ function handleForm1Submit(form) {
     console.log(JSON.stringify(formJSON, null, 2));
 
 
-    var data = { foo: 'showing game' }
-    var event = new CustomEvent('showGame', { detail: data })
+    var eventData = { foo: 'showing game' }
+    var event = new CustomEvent('showGame', { detail: eventData });
     window.document.dispatchEvent(event);
 }
 
@@ -31,8 +31,8 @@ function handleForm2Submit(form) {
     form2Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
 
-    var data = { foo: 'showing second form' }
-    var event = new CustomEvent('showGameAgain', { detail: data })
+    var eventData = { foo: 'showing second form' }
+    var event = new CustomEvent('showGameAgain', { detail: eventData })
     //We tell the level to reload here
     window.document.dispatchEvent(event);
 }
