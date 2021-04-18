@@ -36,7 +36,7 @@ function handleEventShowLastForm(e) {
   $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
   $(".third-form").show(hideShowTime);  
   console.log(e.detail);
-  game2Data = JSON.parse(e.detail.gatheredData);
+  //game2Data = JSON.parse(e.detail.gatheredData);
 }
 
 
@@ -54,14 +54,14 @@ $("#ShowSecondForm").click(function(){
 }); 
 
 $("#showGameAgain").click(function(){
-  var data = { foo: 'showing second form' }
+  var data = { foo: 'showing game again' }
   var event = new CustomEvent('showGameAgain', { detail: data })
   //We tell the level to reload here
   window.document.dispatchEvent(event);
 }); 
 
 $("#showLastForm").click(function(){
-  var data = { foo: 'showing second form' }
+  var data = { foo: 'showing last form' }
   var event = new CustomEvent('showLastForm', { detail: data })
   window.document.dispatchEvent(event);
 }); 

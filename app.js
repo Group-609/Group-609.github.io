@@ -104,8 +104,8 @@ async function run(data) {
     let date = year + "-" + month + "-" + day + "-" + hour + ":" + minute;
     var JsonData = JSON.parse(data);
     //console.log(JsonData);
-    // create a query for a movie to update
-    const query = { "sessionStartTime": JsonData.sessionStartTime };
+    // create a query for a session to update
+    const query = { "form1Data": JsonData.form1Data };
     const options = {
       // create a document if no documents match the query
       upsert: true,
