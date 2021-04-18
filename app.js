@@ -20,6 +20,7 @@ var server = http.createServer ( function(request,response){
     request.on('end', function () {
       queryObject = url.parse(request.url,true).query;
       console.log(queryObject.callback);
+      response.header("Access-Control-Allow-Origin", "*");
       getControlConditionCount().then(
         controlCount => getDDAConditionCount().then(
           ddaCount => {
