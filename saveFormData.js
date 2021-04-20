@@ -63,6 +63,13 @@ function sendDataToDatabase(){
 
     const url = "https://coopgame.herokuapp.com/app.js";
     const data = {say: "sent", to: message}
+    $.ajaxSetup({
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
+
     $.post(url,data, function(data, status){
         console.log("${data} and status is ${status}")
     }); 
