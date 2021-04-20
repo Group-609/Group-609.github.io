@@ -17,8 +17,8 @@ var server = http.createServer ( function(request,response){
   };
 
   if (request.method === 'OPTIONS') {
-    res.writeHead(204, headers);
-    res.end();
+    response.writeHead(204, headers);
+    response.end();
     return;
   }
 
