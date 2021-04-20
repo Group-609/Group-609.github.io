@@ -14,6 +14,7 @@ var server = http.createServer ( function(request,response){
     'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
     'Access-Control-Max-Age': 2592000, // 30 days
     'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type':'text\plain',
     /** add other headers as per requirement */
   };
 
