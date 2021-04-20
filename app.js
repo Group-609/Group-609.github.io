@@ -9,6 +9,20 @@ const client = new MongoClient(uri);
 client.connect();
 
 var server = http.createServer ( function(request,response){
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+    'Access-Control-Max-Age': 2592000, // 30 days
+    /** add other headers as per requirement */
+  };
+
+  if (request.method === 'OPTIONS') {
+    res.writeHead(204, headers);
+    res.end();
+    return;
+  }
+
+
   if (request.method == 'GET') {
     console.log("Get request");
     var controlCount;
