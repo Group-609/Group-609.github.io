@@ -10,6 +10,8 @@ window.document.addEventListener('showLastForm', handleEventShowLastForm, false)
 $(".second-form").hide(); 
 $("#html_embed_widget_11018").hide();  //Unity window
 $(".third-form").hide();  
+$("#thanks_for_participating").hide();  
+$("#error_uploading").hide(); 
 
 
 

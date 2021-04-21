@@ -71,7 +71,16 @@ function sendDataToDatabase(){
     });
 
     $.post(url,data, function(data, status){
-        console.log("${data} and status is ${status}")
+        console.log(data + " and status is " + status)
+        if(status == "success")
+        {
+            $(".third-form").hide();  //Unity window
+            $("#thanks_for_participating").show();  
+            $("#error_uploading").hide(); 
+        }
+        else {
+            $("#error_uploading").show();  
+        }
     }); 
 }
 

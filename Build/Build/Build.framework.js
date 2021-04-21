@@ -1309,7 +1309,7 @@ function _emscripten_asm_const_ii(code, a0) {
  return ASM_CONSTS[code](a0);
 }
 STATIC_BASE = GLOBAL_BASE;
-STATICTOP = STATIC_BASE + 3432096;
+STATICTOP = STATIC_BASE + 3435584;
 __ATINIT__.push({
  func: (function() {
   __GLOBAL__sub_I_AccessibilityScriptingClasses_cpp();
@@ -3239,14 +3239,14 @@ __ATINIT__.push({
   ___emscripten_environ_constructor();
  })
 });
-var STATIC_BUMP = 3432096;
+var STATIC_BUMP = 3435584;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
 STATICTOP += 16;
 assert(tempDoublePtr % 8 == 0);
-function _FirstConditionFinished() {
- showSecondForm();
+function _FirstConditionFinished(gatheredData) {
+ showSecondForm(Pointer_stringify(gatheredData));
 }
 function _JS_Cursor_SetImage(ptr, length) {
  var binary = "";
@@ -3911,6 +3911,9 @@ function _JS_WebRequest_SetTimeout(request, timeout) {
 }
 function _Save(message) {
  insertData(Pointer_stringify(message));
+}
+function _SecondConditionFinished(gatheredData) {
+ showLastForm(Pointer_stringify(gatheredData));
 }
 var webSocketInstances = [];
 function _SocketClose(socketInstance) {
@@ -20011,6 +20014,7 @@ Module.asmLibraryArg = {
  "_JS_WebRequest_SetResponseHandler": _JS_WebRequest_SetResponseHandler,
  "_JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
  "_Save": _Save,
+ "_SecondConditionFinished": _SecondConditionFinished,
  "_SocketClose": _SocketClose,
  "_SocketCreate": _SocketCreate,
  "_SocketError": _SocketError,
