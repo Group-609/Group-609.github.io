@@ -25,7 +25,7 @@ function handleEventShowSecondForm(e) {
   $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
   $(".second-form").show(hideShowTime); 
   console.log(e.detail);
-  game1Data = JSON.parse(e.detail.gatheredData);
+  game1Data = JSON.parse(e.detail);
 }
 
 function handleEventShowGameAgain(e) {
@@ -38,7 +38,7 @@ function handleEventShowLastForm(e) {
   $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
   $(".third-form").show(hideShowTime);  
   console.log(e.detail);
-  game2Data = JSON.parse(e.detail.gatheredData);
+  game2Data = JSON.parse(e.detail);
 }
 
 
