@@ -13,6 +13,8 @@ function handleForm1Submit(form) {
     $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
         formJSON.locationData = data;
     });
+    var currentTime = new Date();
+    formJSON.timeOfForm1Submit = currentTime;
     form1Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
 
