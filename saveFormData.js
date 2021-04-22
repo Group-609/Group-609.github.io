@@ -2,6 +2,12 @@ var form1Data;
 var form2Data;
 var form3Data;
 
+window.document.addEventListener('getPlayerIdentifierFromWebsite', returnPlayerIdentifierToIframe, false);
+
+function returnPlayerIdentifierToIframe(e){
+    var event = new CustomEvent('returnPlayerIdentifierToIframe', { detail: form1Data.timeOfForm1Submit.toString()  });
+    document.getElementById('unityIframe').contentWindow.document.dispatchEvent(event);
+}
 
 function handleForm1Submit(form) {
     form.preventDefault();
@@ -108,3 +114,4 @@ function printCollectedData()
        
     console.log(JSON.stringify(mergedObject, null, 2));
 }
+

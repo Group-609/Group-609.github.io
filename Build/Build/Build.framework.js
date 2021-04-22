@@ -1309,7 +1309,7 @@ function _emscripten_asm_const_ii(code, a0) {
  return ASM_CONSTS[code](a0);
 }
 STATIC_BASE = GLOBAL_BASE;
-STATICTOP = STATIC_BASE + 3436464;
+STATICTOP = STATIC_BASE + 3436672;
 __ATINIT__.push({
  func: (function() {
   __GLOBAL__sub_I_AccessibilityScriptingClasses_cpp();
@@ -3239,7 +3239,7 @@ __ATINIT__.push({
   ___emscripten_environ_constructor();
  })
 });
-var STATIC_BUMP = 3436464;
+var STATIC_BUMP = 3436672;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
@@ -3908,6 +3908,9 @@ function _JS_WebRequest_SetResponseHandler(request, arg, onresponse) {
 }
 function _JS_WebRequest_SetTimeout(request, timeout) {
  wr.requestInstances[request].timeout = timeout;
+}
+function _RequestPlayerIdentifier() {
+ getPlayerIdentifier();
 }
 function _Save(message) {
  insertData(Pointer_stringify(message));
@@ -15807,6 +15810,11 @@ function nullFunc_viffff(x) {
  err("Build with ASSERTIONS=2 for more info.");
  abort(x);
 }
+function nullFunc_viffffffffffffffffffi(x) {
+ err("Invalid function pointer called with signature 'viffffffffffffffffffi'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");
+ err("Build with ASSERTIONS=2 for more info.");
+ abort(x);
+}
 function nullFunc_viffffffffffffiiii(x) {
  err("Invalid function pointer called with signature 'viffffffffffffiiii'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");
  err("Build with ASSERTIONS=2 for more info.");
@@ -16367,8 +16375,8 @@ function nullFunc_vjji(x) {
  err("Build with ASSERTIONS=2 for more info.");
  abort(x);
 }
-Module["wasmTableSize"] = 97626;
-Module["wasmMaxTableSize"] = 97626;
+Module["wasmTableSize"] = 97628;
+Module["wasmMaxTableSize"] = 97628;
 function invoke_dd(index, a1) {
  var sp = stackSave();
  try {
@@ -18209,6 +18217,16 @@ function invoke_viffff(index, a1, a2, a3, a4, a5) {
   Module["setThrew"](1, 0);
  }
 }
+function invoke_viffffffffffffffffffi(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20) {
+ var sp = stackSave();
+ try {
+  Module["dynCall_viffffffffffffffffffi"](index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
+ } catch (e) {
+  stackRestore(sp);
+  if (typeof e !== "number" && e !== "longjmp") throw e;
+  Module["setThrew"](1, 0);
+ }
+}
 function invoke_viffffffffffffiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17) {
  var sp = stackSave();
  try {
@@ -19521,6 +19539,7 @@ Module.asmLibraryArg = {
  "nullFunc_viff": nullFunc_viff,
  "nullFunc_vifff": nullFunc_vifff,
  "nullFunc_viffff": nullFunc_viffff,
+ "nullFunc_viffffffffffffffffffi": nullFunc_viffffffffffffffffffi,
  "nullFunc_viffffffffffffiiii": nullFunc_viffffffffffffiiii,
  "nullFunc_viffffffi": nullFunc_viffffffi,
  "nullFunc_viffffi": nullFunc_viffffi,
@@ -19817,6 +19836,7 @@ Module.asmLibraryArg = {
  "invoke_viff": invoke_viff,
  "invoke_vifff": invoke_vifff,
  "invoke_viffff": invoke_viffff,
+ "invoke_viffffffffffffffffffi": invoke_viffffffffffffffffffi,
  "invoke_viffffffffffffiiii": invoke_viffffffffffffiiii,
  "invoke_viffffffi": invoke_viffffffi,
  "invoke_viffffi": invoke_viffffi,
@@ -20013,6 +20033,7 @@ Module.asmLibraryArg = {
  "_JS_WebRequest_SetRequestHeader": _JS_WebRequest_SetRequestHeader,
  "_JS_WebRequest_SetResponseHandler": _JS_WebRequest_SetResponseHandler,
  "_JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
+ "_RequestPlayerIdentifier": _RequestPlayerIdentifier,
  "_Save": _Save,
  "_SecondConditionFinished": _SecondConditionFinished,
  "_SocketClose": _SocketClose,
@@ -27165,6 +27186,11 @@ var dynCall_viffff = Module["dynCall_viffff"] = (function() {
  assert(runtimeInitialized, "you need to wait for the runtime to be ready (e.g. wait for main() to be called)");
  assert(!runtimeExited, "the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)");
  return Module["asm"]["dynCall_viffff"].apply(null, arguments);
+});
+var dynCall_viffffffffffffffffffi = Module["dynCall_viffffffffffffffffffi"] = (function() {
+ assert(runtimeInitialized, "you need to wait for the runtime to be ready (e.g. wait for main() to be called)");
+ assert(!runtimeExited, "the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)");
+ return Module["asm"]["dynCall_viffffffffffffffffffi"].apply(null, arguments);
 });
 var dynCall_viffffffffffffiiii = Module["dynCall_viffffffffffffiiii"] = (function() {
  assert(runtimeInitialized, "you need to wait for the runtime to be ready (e.g. wait for main() to be called)");
