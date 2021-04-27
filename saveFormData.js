@@ -1,6 +1,7 @@
 var form1Data;
 var form2Data;
 var form3Data;
+var form4Data;
 
 window.document.addEventListener('getPlayerIdentifierFromWebsite', returnPlayerIdentifierToIframe, false);
 
@@ -58,11 +59,25 @@ function handleForm3Submit(form) {
     sendDataToDatabase();
 }
 
+
+function handleForm4Submit(form) {
+    form.preventDefault();
+
+    const data = new FormData(form.target);
+    const formJSON = Object.fromEntries(data.entries());
+    // for multi-selects, we need special handling
+    formJSON.snacks = data.getAll('snacks');
+    form4Data = formJSON;
+    console.log(JSON.stringify(formJSON, null, 2));
+    sendDataToDatabase();
+}
+
 function sendDataToDatabase(){
     var mergedObject = {
         form1Data,
         form2Data,
         form3Data,
+        form4Data,
         game1Data,
         game2Data
       };
@@ -82,7 +97,7 @@ function sendDataToDatabase(){
         console.log(data + " and status is " + status)
         if(status == "success")
         {
-            $(".third-form").hide();  //Unity window
+            $(".fourth-form").hide();  //Unity window
             $("#thanks_for_participating").show();  
             $("#error_uploading").hide(); 
         }
@@ -102,12 +117,16 @@ form2.addEventListener('submit', handleForm2Submit);
 const form3 = document.querySelector('.third-form');
 form3.addEventListener('submit', handleForm3Submit);
 
+const form4 = document.querySelector('.fourth-form');
+form4.addEventListener('submit', handleForm4Submit);
+
 function printCollectedData()
 {
     var mergedObject = {
         form1Data,
         form2Data,
         form3Data,
+        form4Data,
         game1Data,
         game2Data
       };
