@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="customStyle.css">
     
 </head>
-<body>
+<body onbeforeunload="return exitWarning()">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="container">
       
@@ -55,7 +55,8 @@
           <div class="input-group">  
             <label for="age">Please indicate Your age</label>
             <!-- <input id="age" name="age" type="text" required> -->
-            <input type="number" size="6" name="age" min="1" max="99" value="age" required>
+            <input type="number" size="6" name="age" min="1" max="99" value="age" required
+             oninput="if(value.length>2)value=value.slice(0,2)"> <!-- Makes sure that no more than 2 symbols are added -->
           </div>
 
         <!-- <div class="input-group">
@@ -530,4 +531,5 @@
     </div>
     <script src="saveFormData.js"></script> 
     <script src="showPartsOfTest.js"></script> 
+    <script> function exitWarning() { return "You are about to exit the study. If you exit, all of the data will be lost.";} </script>
 </body>
