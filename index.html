@@ -28,18 +28,22 @@
           <p>We are group 609 from the final semester of Medialogy Bachelor’s programme at Aalborg University Copenhagen. This is a
           study on video games for our semester project. The whole procedure should take up to 60 minutes, including 20-30 minutes of gameplay.</p>
 
-          <p>This study is performed on a pair of participants. Please find another person you can participate in the test with if you have not
-          yet done so and share this website's link with them. Communication is important; we recommend being in the same room physically or communicating via voice call. </p>
+            <ul><b>Requirements before starting:</b>
+              <li>This study is performed on a pair of participants. Please find another person you can participate in the test with  at the same time 
+              and share this website's link with them.</li>
+              <li>You are only able to participate in the study once.</li>
+              <li>Communication is important; we recommend being in the same room physically or communicating via voice call with the other person.</li>
+              <li>Mobile devices are not supported - please use a computer for this test procedure.</li>
+              <li>The game runs best when opened in Google Chrome. Firefox is supported too.</li>
+            </ul>
 
-          <p>You will be presented with two video game prototypes. Your in-game data will be recorded.</p>
-
-          <p>All the information collected in the session will be stored until the students’ exam, which shall take place in June
-          2021. We may publish and discuss results from this session in our semester report, but the individual information
-          there will be anonymous.</p>
+          <p>You will be presented with two video game prototypes. Your in-game data will be recorded. All the information collected in the session 
+          (in-game and questionnaire data) will be stored until the students’ exam, which shall take place in June 2021. 
+          We may publish and discuss results from this session in our semester report, but the individual information there will be anonymous.</p>
 
           <p>The participation is voluntary, and You may withdraw at any point. In case of withdrawal, the group is obliged to
-          destroy Your provided data immediately. If you have any questions, write to the person that contacted you about this study or reach us via e-mail
-          <b>med609kbh2021@create.aau.dk</b></p>
+          destroy Your provided data immediately once we are informed about the withdrawal. 
+          If you have any questions, write to the person that contacted you about this study or reach us via e-mail <b>med609kbh2021@create.aau.dk</b></p>
 
           <p>⚠️<b>By continuining with this test procedure You agree that You have read the description of the testing and of Your rights as the participant presented above. 
             You hereby voluntarily agree to participate in the study.</b>⚠️</p>
@@ -75,6 +79,15 @@
               <option>Other</option>
             </select>
           </div>
+
+
+          <div class="input-group">
+            <label for="firsttime">Is this your first time participating in this study?</label>
+            <select id="firsttime" name="firsttime" required>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
                 
             <!--  <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
               <label class="inline" for="salutation-mr">Mr.</label>
@@ -86,6 +99,7 @@
               <label class="inline" for="salutation-ms">Ms.</label>
             </div>
             
+
             <div class="input-group">
               <label for="email">Email Address</label>
               <input id="email" name="email" type="email"/>
@@ -117,17 +131,8 @@
           </form>
         </section>  
           
-        
 
-        <h2 onclick="printCollectedData()">⚠️Before Playing</h2> 
-
-        <p>The game runs best when opened in Firefox. If Firefox is unavailable, Google Chrome is supported too.</p>
-
-        <p>One person will need to create a room (Create Room), while the other one will need to join the same room from the list (Show Room List).
-        </p>
-
-
-        <h2>🎮 Game</h2>
+        <h2 onclick="printCollectedData()">🎮 Game</h2>
 
         <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
         Some call them "ink monsters". They destroy everything that's still vivid and lively in this town. The fountains, filled
@@ -142,6 +147,9 @@
           <li>Mouse to aim & mouse left click to shoot</li>
         </ul>
 
+        <p> ⚠️ One person will need to create a room (Create Room), while the other one will need to join the same room from the
+          list (Show Room List). ⚠️</p>
+
         <p><b>To continue, please enter fullscreen in the game below.</b></p>
 
        
@@ -153,329 +161,22 @@
         </div>
 
         <section class="second-form">
-          <h2>📝 Mid gameplay survey</h2>
-          <form>
-          <div class="input-group">
-            <label class="statement">The game grabs my attention.</label>
-            
-            <ul class='likert'>
-                <li><input type="radio" name="Q1" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q1" value=2><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q1" value=3><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q1" value=4><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q1" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
           
-          <div class="input-group">
-            <label class="statement">The game provides content that stimulates my attention.</label>
-            <ul class='likert'>
-                <li><input type="radio" name="Q2" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q2" value=2><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q2" value=3><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q2" value=4><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q2" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
+          <h2>📝 First gameplay survey</h2>
+          <p>Please answer the following questions based on your experience after playing the <b>first prototype.</b></p>
+        
+          <form>
+          <iframe src="questionnaire.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        
+          <button type="submit">Submit</button>
+          </form>
+        </section> 
 
 
-          <div class="input-group">
-            <label class="statement">I do not get distracted when I play the game</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q3" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q3" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q3" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q3" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q3" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">Generally speaking, I can concentrate on the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q4" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q4" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q4" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q4" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q4" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-            
-
-          <div class="input-group">
-            <label class="statement">The game tasks are adequate for me.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q5" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q5" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q5" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q5" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q5" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I understand the goals of this game from the start.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q6" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q6" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q6" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q6" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q6" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">The overall game goals are clear to me.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q7" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q7" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q7" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q7" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q7" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I understand the overall progress of the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q8" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q8" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q8" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q8" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q8" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I know what will happen next in the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q9" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q9" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q9" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q9" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q9" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I understand what I need to do to win/complete the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q10" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q10" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q10" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q10" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q10" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I receive feedback on my progress in the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q11" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q11" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q11" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q11" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q11" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I receive immediate feedback on my actions.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q12" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q12" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q12" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q12" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q12" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I receive information on my game performance immediately.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q13" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q13" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q13" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q13" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q13" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-          <div class="input-group">
-            <label class="statement">The level of difficulty in this game is suitable for me.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q14" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q14" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q14" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q14" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q14" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">My skills gradually improve through the course of the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q15" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q15" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q15" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q15" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q15" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-          <div class="input-group">
-            <label class="statement">I am motivated by the improvement of my skills.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q16" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q16" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q16" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q16" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q16" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">The game provides new challenges at an appropriate pace.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q17" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q17" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q17" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q17" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q17" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">The game provides different levels of challenges tailored to different players.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q18" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q18" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q18" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q18" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q18" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I feel a sense of control over my opponent.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q19" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q19" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q19" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q19" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q19" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I feel a sense of control over my movements while playing the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q20" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q20" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q20" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q20" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q20" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I feel a sense of control over my interactions with the game itself.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q21" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q21" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q21" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q21" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q21" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I feel that I can use strategies freely.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q22" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q22" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q22" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q22" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q22" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-          <div class="input-group">
-            <label class="statement">I forget about time passing while playing the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q23" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q23" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q23" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q23" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q23" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-            
-          <div class="input-group">
-            <label class="statement">I become unaware of my surrounding while playing the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q24" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q24" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q24" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q24" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q24" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I can become deeply involved in the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q25" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q25" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q25" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q25" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q25" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-          <div class="input-group">
-            <label class="statement">I feel connected to other players when I play the game.</label>
-            <ul class='likert'>
-              <li><input type="radio" name="Q26" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-              <li><input type="radio" name="Q26" value=2><label for="disagree">Disagree</label></li>
-              <li><input type="radio" name="Q26" value=3><label for="neutral">Neutral</label></li>
-              <li><input type="radio" name="Q26" value=4><label for="agree">Agree</label></li>
-              <li><input type="radio" name="Q26" value=5><label for="strong_agree">Strongly agree</label>
-              </li>
-            </ul>
-
-
-            <div class="input-group">
-              <label class="statement">The game supports social interaction between players.</label>
-              <ul class='likert'>
-                <li><input type="radio" name="Q27" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q27" value=2><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q27" value=3><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q27" value=4><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q27" value=5><label for="strong_agree">Strongly agree</label>
-                </li>
-              </ul>
-
-
+        <section class="third-form">
+          <h2>📝 Second gameplay survey</h2>
+          <p>Please answer the following questions based on your experience after playing the <b>second prototype only.</b></p>
+          <form>
             <div class="input-group">
               <label class="statement">The connection with other players helps me improve my game playing skills.</label>
               <ul class='likert'>
@@ -486,23 +187,18 @@
                 <li><input type="radio" name="Q28" value=5><label for="strong_agree">Strongly agree</label>
                 </li>
               </ul>
-
-
-          <!--  <div class="input-group">
-              <label for="message">Enter a Message</label>
-              <textarea id="message" name="message" rows="6" cols="65"></textarea>
-            </div> -->
-          
-            <button type="submit">Submit</button>
           </form>
-        </section> 
 
+          <button type="submit">Submit</button>
 
-        <section class="third-form">
-          <!-- <h2>Post gameplay survey</h2> -->
+        </section>
+
+   
+        <section class="fourth-form">
+          <!-- <h2>Final feeedback</h2> -->
           <form>
             <div class="input-group">
-              <label for="issuemessage">If You had experienced any technical issues, please describe them and write how they influenced your gameplay.</label>
+              <label for="issuemessage">If You had experienced any technical issues, please describe them and how they influenced your gameplay.</label>
               <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"></textarea>
             </div>
 
