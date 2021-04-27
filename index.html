@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="customStyle.css">
     
 </head>
-<body>
+<body onbeforeunload="return exitWarning()">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="container">
       
@@ -530,4 +530,5 @@
     </div>
     <script src="saveFormData.js"></script> 
     <script src="showPartsOfTest.js"></script> 
+    <script> function exitWarning() { return "You are about to exit the study. If you exit, all of the data will be lost.";} </script>
 </body>
