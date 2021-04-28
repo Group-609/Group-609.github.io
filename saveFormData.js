@@ -29,6 +29,7 @@ function handleForm1Submit(form) {
     var eventData = { foo: 'showing game' }
     var event = new CustomEvent('showGame', { detail: eventData });
     window.document.dispatchEvent(event);
+    //we dont send data here, since we still dont have the location data at this point
 }
 
 function handleForm2Submit(form) {
@@ -45,6 +46,7 @@ function handleForm2Submit(form) {
     var event = new CustomEvent('showGameAgain', { detail: eventData })
     //We tell the level to reload here
     window.document.dispatchEvent(event);
+    sendDataToDatabaseWithoutFeedback();
 }
 
 function handleForm3Submit(form) {
@@ -56,7 +58,10 @@ function handleForm3Submit(form) {
     formJSON.snacks = data.getAll('snacks');
     form3Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
-    sendDataToDatabase();
+    //sendDataToDatabase();
+    sendDataToDatabaseWithoutFeedback();
+    $(".third-form").hide();  
+    $(".fourth-form").show();  
 }
 
 
@@ -70,6 +75,32 @@ function handleForm4Submit(form) {
     form4Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
     sendDataToDatabase();
+}
+
+function sendDataToDatabaseWithoutFeedback(){
+    var mergedObject = {
+        form1Data,
+        form2Data,
+        form3Data,
+        form4Data,
+        game1Data,
+        game2Data
+      };
+    var message = JSON.stringify(mergedObject, null, 2);
+    console.log("Sending data: " + message);
+
+    const url = "https://coopgame.herokuapp.com/app.js";
+    const data = {say: "sent", to: message}
+    $.ajaxSetup({
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
+
+    $.post(url,data, function(data, status){
+        console.log("Upload status: " + status + " Data sent: " + data )
+    }); 
 }
 
 function sendDataToDatabase(){
@@ -94,10 +125,10 @@ function sendDataToDatabase(){
     });
 
     $.post(url,data, function(data, status){
-        console.log(data + " and status is " + status)
+        console.log("Upload status: " + status + " Data sent: " + data )
         if(status == "success")
         {
-            $(".fourth-form").hide();  //Unity window
+            $(".fourth-form").hide(); 
             $("#thanks_for_participating").show();  
             $("#error_uploading").hide();
             removeExitWarning();
