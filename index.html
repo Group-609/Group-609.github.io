@@ -165,9 +165,8 @@
           <h2>📝 First gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>first prototype.</b></p>
         
-          <form>
+          <form> 
           <iframe src="questionnaire.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-        
           <button type="submit">Submit</button>
           </form>
         </section> 
@@ -177,18 +176,10 @@
           <h2>📝 Second gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>second prototype only.</b></p>
           <form>
-            <div class="input-group">
-              <label class="statement">The connection with other players helps me improve my game playing skills.</label>
-              <ul class='likert'>
-                <li><input type="radio" name="Q28" value=1 required><label for="strong_disagree">Strongly disagree</label></li>
-                <li><input type="radio" name="Q28" value=2><label for="disagree">Disagree</label></li>
-                <li><input type="radio" name="Q28" value=3><label for="neutral">Neutral</label></li>
-                <li><input type="radio" name="Q28" value=4><label for="agree">Agree</label></li>
-                <li><input type="radio" name="Q28" value=5><label for="strong_agree">Strongly agree</label>
-                </li>
-              </ul>
+            <iframe src="questionnaire.html"
+              onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+            <button type="submit">Submit</button>
           </form>
-
           <button type="submit">Submit</button>
 
         </section>
