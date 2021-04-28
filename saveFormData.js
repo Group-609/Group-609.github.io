@@ -99,7 +99,8 @@ function sendDataToDatabase(){
         {
             $(".fourth-form").hide();  //Unity window
             $("#thanks_for_participating").show();  
-            $("#error_uploading").hide(); 
+            $("#error_uploading").hide();
+            removeExitWarning();
         }
         else {
             $("#error_uploading").show();  
