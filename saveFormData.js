@@ -29,7 +29,7 @@ function handleForm1Submit(form) {
     var eventData = { foo: 'showing game' }
     var event = new CustomEvent('showGame', { detail: eventData });
     window.document.dispatchEvent(event);
-    sendDataToDatabaseWithoutFeedback();
+    //we dont send data here, since we still dont have the location data at this point
 }
 
 function handleForm2Submit(form) {
