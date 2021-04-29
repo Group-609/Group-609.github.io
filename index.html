@@ -23,10 +23,10 @@
         <p>In this page, you will find all of the required information to participate.
           <b>Please read everything thoroughly.</b></p>
 
-        <h2>📍 Information </h2>
+        <h2 onclick="printCollectedData()">📍 Information </h2>
 
           <p>We are group 609 from the final semester of Medialogy Bachelor’s programme at Aalborg University Copenhagen. This is a
-          study on video games for our semester project. The whole procedure should take up to 60 minutes, including 20-30 minutes of gameplay.</p>
+          study on video games for our semester project. The whole procedure should take up to 50 minutes, including 20-30 minutes of gameplay.</p>
 
             <ul><b>Requirements before starting:</b>
               <li>This study is performed on a pair of participants. Please find another person you can participate in the test with  at the same time 
@@ -37,11 +37,10 @@
               <li>The game runs best when opened in Google Chrome. Firefox is supported too.</li>
             </ul>
 
-          <p>If you are ready to proceed and fit the requirements, press the "Continue" button below.</p>
+     <section class="info-button"><p>If you are ready to proceed and fit the requirements, press the "Continue" button below.</p>
+          <button type="continue" class="continue">Continue</button> </section>
 
-          <button type="continue" class="continue">Continue</button>
-
-
+      <section class="consent-form">
         <h2>⚠️ Consent Form </h2>
 
           <p>You will be presented with two video game prototypes and a questionnaire after each prototype playthrough. 
@@ -53,18 +52,18 @@
           destroy Your provided data immediately once we are informed about the withdrawal. 
           If you have any questions, write to the person that contacted you about this study or reach us via e-mail <b>med609kbh2021@create.aau.dk</b></p>
 
-          <p>⚠️<b>By continuining with this test procedure You agree that You have read the description of the testing and of Your rights as the participant presented above. 
-            You hereby voluntarily agree to participate in the study.</b>⚠️</p>
-
-          <button type="continue" class="continue">Continue</button>
-
+        <section class="consent-button"> <p><p>⚠️<b>By continuining with this test procedure You agree that You have read the description of the testing and of Your
+            rights as the participant presented above. You hereby voluntarily agree to participate in the study.</b>⚠️</p></p>
+          <button type="continue" class="continue">Continue</button> </section>
+          </section>
          
-        <h2>📝 Consent Form and Questionnaire</h2>
+        <section class="first-form"> <h2>📝 Initial Questionnaire</h2>
         
-        <p>Please answer the two questions below and press "Submit" to continue. 
-          This may help notice and evaluate certain tendencies (if any) depending on demographic information.</p>
+        <p>Please answer the three questions below and press "Submit" to continue. 
+          This may help notice and evaluate certain tendencies (if any) depending on demographic information and remind You that
+          You can only participate in the study once.</p>
           
-        <section class="first-form">
+       
           <form>
           <div class="input-group">  
             <label for="age">Please indicate Your age</label>
@@ -142,7 +141,7 @@
         </section>  
           
 
-        <h2 onclick="printCollectedData()">🎮 Game</h2>
+  <!-- <h2 onclick="printCollectedData()">🎮 Game</h2>
 
         <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
         Some call them "ink monsters". They destroy everything that's still vivid and lively in this town. The fountains, filled
@@ -158,7 +157,7 @@
         </ul>
 
         <p> ⚠️ One person will need to create a room (Create Room), while the other one will need to join the same room from the
-          list (Show Room List). ⚠️</p>
+          list (Show Room List). ⚠️</p> -->
 
         <p><b>To continue, please enter fullscreen in the game below.</b></p>
 
@@ -174,7 +173,7 @@
           
           <h2>📝 First gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>first prototype.</b></p>
-          <b>Make sure to answer the questions individually.</b>
+          <p><b>Make sure to answer the questions individually.</b> Afterwards, press the "Submit" button at the bottom.</p>
         
           <form> 
           <iframe src="questionnaire.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
@@ -186,7 +185,7 @@
         <section class="third-form">
           <h2>📝 Second gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>second prototype only.</b></p>
-          <b>Make sure to answer the questions individually.</b>
+          <p><b>Make sure to answer the questions individually.</b> Afterwards, press the "Submit" button at the bottom.</p>
          
           <form>
             <iframe src="questionnaire.html"
@@ -226,6 +225,8 @@
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
+        <button id="showConsent">TestButton5 pls ignore</button>
+        <button id="showFirstForm">TestButton6 pls ignore</button>
 
     </div>
     <script src="saveFormData.js"></script> 
