@@ -37,7 +37,15 @@
               <li>The game runs best when opened in Google Chrome. Firefox is supported too.</li>
             </ul>
 
-          <p>You will be presented with two video game prototypes. Your in-game data will be recorded. All the information collected in the session 
+          <p>If you are ready to proceed and fit the requirements, press the "Continue" button below.</p>
+
+          <button type="continue" class="continue">Continue</button>
+
+
+        <h2>⚠️ Consent Form </h2>
+
+          <p>You will be presented with two video game prototypes and a questionnaire after each prototype playthrough. 
+          Your in-game data will be recorded. All the information collected in the session 
           (in-game and questionnaire data) will be stored until the students’ exam, which shall take place in June 2021. 
           We may publish and discuss results from this session in our semester report, but the individual information there will be anonymous.</p>
 
@@ -47,6 +55,8 @@
 
           <p>⚠️<b>By continuining with this test procedure You agree that You have read the description of the testing and of Your rights as the participant presented above. 
             You hereby voluntarily agree to participate in the study.</b>⚠️</p>
+
+          <button type="continue" class="continue">Continue</button>
 
          
         <h2>📝 Consent Form and Questionnaire</h2>
@@ -127,7 +137,7 @@
             </div>
             <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>--> <!--- if we want to get any data from user like IP address or sth --->
             
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit">Submit</button>
           </form>
         </section>  
           
@@ -168,7 +178,7 @@
         
           <form> 
           <iframe src="questionnaire.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-          <button type="submit">Submit</button>
+          <button type="submit" class="submit">Submit</button>
           </form>
         </section> 
 
@@ -181,10 +191,9 @@
           <form>
             <iframe src="questionnaire.html"
               onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit">Submit</button>
           </form>
-          <button type="submit">Submit</button>
-
+        
         </section>
 
    
@@ -201,7 +210,7 @@
               <textarea id="finalmessage" name="finalmessage" rows="6" cols="65"></textarea>
             </div>
             
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit">Submit</button>
           </form>
         </section>  
 
