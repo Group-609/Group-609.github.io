@@ -54,7 +54,7 @@
 
         <section class="consent-button"> <p><p>⚠️<b>By pressing "Continue" You agree that You have read the description of the testing and of Your
             rights as the participant presented above. You hereby voluntarily agree to participate in the study.</b>⚠️</p></p>
-          <button type="continue" class="continue" id="showFirstForm">Continue</button> </section>
+          <button type="continue" class="continue" id="showFirstForm" onclick="consentBool()">Continue</button> </section>
           </section>
          
         <section class="first-form"> <h2>📝 Initial Questionnaire</h2>
@@ -234,4 +234,4 @@
     <script src="showPartsOfTest.js"></script> 
     <script> function exitWarning() { return "You are about to exit the study. If you exit, all of the data will be lost.";} </script>
     <script> function removeExitWarning() { window.onbeforeunload = null; }</script>
-</body>
+  </body>
