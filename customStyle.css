@@ -62,8 +62,8 @@
           top: -2px;
           left:50%;
           cursor: pointer; 
-          width: 1.8rem;
-          height: 1.8rem;
+          width: 2.3rem;
+          height: 2.3rem;
           background: #e4e3e3;
           border: 0.1rem solid #d1d1d1;   
           border-radius: 50%
@@ -71,8 +71,8 @@
 
         form .likert li input[type="radio"]:checked {
           display:block;
-          width: 1.8rem;
-          height: 1.8rem;
+          width: 2.3rem;
+          height: 2.3rem;
           background: #9b4dca;
           border: 0.4rem solid #d1d1d1;;
           border-radius: 50%
