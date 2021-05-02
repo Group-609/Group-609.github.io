@@ -1,3 +1,4 @@
+let consentFormAgreed = false;
 var form1Data;
 var form2Data;
 var form3Data;
@@ -8,6 +9,12 @@ window.document.addEventListener('getPlayerIdentifierFromWebsite', returnPlayerI
 function returnPlayerIdentifierToIframe(e){
     var event = new CustomEvent('returnPlayerIdentifierToIframe', { detail: form1Data.timeOfForm1Submit.toString()  });
     document.getElementById('unityIframe').contentWindow.document.dispatchEvent(event);
+}
+
+
+function consentBool() {
+    consentFormAgreed = !consentFormAgreed;
+    //console.log('Toggled bool is', consentFormAgreed);
 }
 
 function handleForm1Submit(form) {
@@ -79,6 +86,7 @@ function handleForm4Submit(form) {
 
 function sendDataToDatabaseWithoutFeedback(){
     var mergedObject = {
+        consentFormAgreed,
         form1Data,
         form2Data,
         form3Data,
@@ -105,6 +113,7 @@ function sendDataToDatabaseWithoutFeedback(){
 
 function sendDataToDatabase(){
     var mergedObject = {
+        consentFormAgreed,
         form1Data,
         form2Data,
         form3Data,
@@ -155,6 +164,7 @@ form4.addEventListener('submit', handleForm4Submit);
 function printCollectedData()
 {
     var mergedObject = {
+        consentFormAgreed,
         form1Data,
         form2Data,
         form3Data,
