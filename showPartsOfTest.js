@@ -22,14 +22,12 @@ $("#error_uploading").hide();
 
 
 function handleEventShowConsent(e) {
-  $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
   $(".consent-form").show(hideShowTime);
   $(".info-button").hide(hideShowTime);
   console.log(e.detail);
 }
 
 function handleEventShowFirstForm(e) {
-  $("#html_embed_widget_11018").hide(hideShowTime);  //Unity window
   $(".first-form").show(hideShowTime);
   $(".consent-button").hide(hideShowTime);
   console.log(e.detail);
