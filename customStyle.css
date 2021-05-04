@@ -1,4 +1,7 @@
         
+
+/* #wholepage { position:absolute; margin:0px; width:100%; } */
+
         body {
           background-image: url('inkBorder.png');
           background-repeat: no-repeat;  
