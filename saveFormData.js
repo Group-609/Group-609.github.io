@@ -23,7 +23,6 @@ function handleForm1Submit(form) {
     const data = new FormData(form.target);
     const formJSON = Object.fromEntries(data.entries());
     // for multi-selects, we need special handling
-    formJSON.snacks = data.getAll('snacks');
     $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
         formJSON.locationData = data;
     });
@@ -45,7 +44,6 @@ function handleForm2Submit(form) {
     const data = new FormData(form.target);
     const formJSON = Object.fromEntries(data.entries());
     // for multi-selects, we need special handling
-    formJSON.snacks = data.getAll('snacks');
     form2Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
 
@@ -62,7 +60,6 @@ function handleForm3Submit(form) {
     const data = new FormData(form.target);
     const formJSON = Object.fromEntries(data.entries());
     // for multi-selects, we need special handling
-    formJSON.snacks = data.getAll('snacks');
     form3Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
     //sendDataToDatabase();
@@ -78,7 +75,6 @@ function handleForm4Submit(form) {
     const data = new FormData(form.target);
     const formJSON = Object.fromEntries(data.entries());
     // for multi-selects, we need special handling
-    formJSON.snacks = data.getAll('snacks');
     form4Data = formJSON;
     console.log(JSON.stringify(formJSON, null, 2));
     sendDataToDatabase();
