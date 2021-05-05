@@ -26,7 +26,7 @@
         <h2 onclick="printCollectedData()">📍 Information </h2>
 
           <p>We are group 609 from the final semester of Medialogy Bachelor’s programme at Aalborg University Copenhagen. This is a
-          study on video games for our semester project. The whole procedure should take up to 50 minutes, including 20-30 minutes of gameplay.</p>
+          study on video games for our semester project. The whole procedure should take 30-40 minutes, including 15-25 minutes of gameplay.</p>
 
             <ul><b>Requirements before starting:</b>
               <li>This study is performed on a pair of participants. Please find another person you can participate in the test with  at the same time 
@@ -36,6 +36,7 @@
               <li>Mobile devices are not supported - please use a computer for this test procedure.</li>
               <li>The game runs best when opened in Google Chrome. Firefox is supported too.</li>
               <li>Make sure that you are on a stable internet connection during the whole procedure.</li>
+              
             </ul>
 
   <p>⭐As a thank you for participation, <b>You have a chance to win a random Steam key.</b>
@@ -158,10 +159,20 @@
           </form>
         </section>  
           
+     <section class="intro-video">
+     <h2 onclick="printCollectedData()">🎮 Game Introduction</h2>
 
-  <!-- <h2 onclick="printCollectedData()">🎮 Game</h2>
+        <p>Please watch the following game introduction video with <b>sound on</b>. Afterwards, press "Continue".</p>
 
-        <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
+      <div style="width: 100%; height: 540">
+        <iframe width = "853" height = "505" src="https://www.youtube.com/embed/VVsPOqn9SfI" frameborder="0"
+        allowfullscreen></iframe> </div>
+
+        <p><button type="continue" class="continue" id="showGame">Continue</button></p>
+
+        </section>
+
+        <!-- <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
         Some call them "ink monsters". They destroy everything that's still vivid and lively in this town. The fountains, filled
         with magical water of life, are getting destroyed. Luckily, you and your friend manage to fill your tanks
         with the yet uncorrupted water. This is the only way to restore color. Save the town from ink monsters and cleanse the fountains water!</p>
@@ -182,7 +193,7 @@
 
           <p><b>To continue, please enter fullscreen in the game below.</b></p>
 
-            <div data-height="600" data-width="960" class="game_frame game_loaded" style="width: 100%; height: 800">
+            <div data-height="600" data-width="960" class="game_frame game_loaded" style="width: 100%; height: 650">
                 <iframe id="unityIframe" allow="autoplay; fullscreen;" src="Build/index.html" allowfullscreen="true" webkitallowfullscreen="true" allowtransparency="true" frameborder="0" height="100%" width="100%">
                 </iframe>
             </div>
@@ -245,12 +256,12 @@
             <p>Upload of data successful! Thank you for participating in our study!</p>
         </div>
 
-        <button id="showGame">TestButton1 pls ignore</button>
+      <!--  <button id="showGame">TestButton1 pls ignore</button>
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
         <button id="showConsent">TestButton5 pls ignore</button>
-        <button id="showFirstForm">TestButton6 pls ignore</button>
+        <button id="showFirstForm">TestButton6 pls ignore</button> -->
 
     </div>
     <script src="saveFormData.js"></script> 

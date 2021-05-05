@@ -5,6 +5,7 @@ var game2Data;
 
 window.document.addEventListener('showConsent', handleEventShowConsent, false);
 window.document.addEventListener('showFirstForm', handleEventShowFirstForm, false);
+window.document.addEventListener('showVideo', handleEventShowVideo, false);
 
 window.document.addEventListener('showGame', handleEventShowGame, false);
 window.document.addEventListener('showSecondForm', handleEventShowSecondForm, false);
@@ -13,12 +14,14 @@ window.document.addEventListener('showLastForm', handleEventShowLastForm, false)
 
 $(".consent-form").hide();
 $(".first-form").hide();
+$(".intro-video").hide();
 $(".second-form").hide(); 
 $("#html_embed_widget_11018").hide();  //Unity window
 $(".third-form").hide();  
 $(".fourth-form").hide();  
 $("#thanks_for_participating").hide();  
 $("#error_uploading").hide(); 
+
 
 
 function handleEventShowConsent(e) {
@@ -33,9 +36,16 @@ function handleEventShowFirstForm(e) {
   console.log(e.detail);
 }
 
+function handleEventShowVideo(e) {
+  $(".intro-video").show();
+  $(".first-form").hide(hideShowTime);
+  console.log(e.detail);
+}
+
+
 function handleEventShowGame(e) {
   $("#html_embed_widget_11018").show(hideShowTime);  //Unity window
-  $(".first-form").hide(hideShowTime); 
+  $(".intro-video").hide(hideShowTime); 
   console.log(e.detail);
 }
 
