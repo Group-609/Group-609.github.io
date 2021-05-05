@@ -36,6 +36,7 @@
               <li>Mobile devices are not supported - please use a computer for this test procedure.</li>
               <li>The game runs best when opened in Google Chrome. Firefox is supported too.</li>
               <li>Make sure that you are on a stable internet connection during the whole procedure.</li>
+              
             </ul>
 
   <p>⭐As a thank you for participation, <b>You have a chance to win a random Steam key.</b>
@@ -154,14 +155,24 @@
             </div>
             <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>--> <!--- if we want to get any data from user like IP address or sth --->
             
-            <button type="submit" class="submit">Submit</button>
+            <button type="submit" class="submit" id="showVideo">Submit</button>
           </form>
         </section>  
           
+     <section class="intro-video">
+     <h2 onclick="printCollectedData()">🎮 Game Introduction</h2>
 
-  <!-- <h2 onclick="printCollectedData()">🎮 Game</h2>
+        <p>Please watch the following game introduction video. Afterwards, press "Continue".</p>
 
-        <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
+      <div style="width: 100%; height: 540">
+        <iframe width = "853" height = "505" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0"
+        allowfullscreen></iframe> </div>
+
+        <p><button type="continue" class="continue" id="showGame">Continue</button></p>
+
+        </section>
+
+        <!-- <p>Darkness has surrounded your colorful town. The corruption started spreading and spawning evil colorless creatures.
         Some call them "ink monsters". They destroy everything that's still vivid and lively in this town. The fountains, filled
         with magical water of life, are getting destroyed. Luckily, you and your friend manage to fill your tanks
         with the yet uncorrupted water. This is the only way to restore color. Save the town from ink monsters and cleanse the fountains water!</p>
@@ -182,7 +193,7 @@
 
           <p><b>To continue, please enter fullscreen in the game below.</b></p>
 
-            <div data-height="600" data-width="960" class="game_frame game_loaded" style="width: 100%; height: 800">
+            <div data-height="600" data-width="960" class="game_frame game_loaded" style="width: 100%; height: 650">
                 <iframe id="unityIframe" allow="autoplay; fullscreen;" src="Build/index.html" allowfullscreen="true" webkitallowfullscreen="true" allowtransparency="true" frameborder="0" height="100%" width="100%">
                 </iframe>
             </div>

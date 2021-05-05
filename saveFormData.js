@@ -32,8 +32,8 @@ function handleForm1Submit(form) {
     console.log(JSON.stringify(formJSON, null, 2));
 
 
-    var eventData = { foo: 'showing game' }
-    var event = new CustomEvent('showGame', { detail: eventData });
+    var eventData = { foo: 'showing video' }
+    var event = new CustomEvent('showVideo', { detail: eventData });
     window.document.dispatchEvent(event);
     //we dont send data here, since we still dont have the location data at this point
 }
