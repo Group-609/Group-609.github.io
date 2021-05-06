@@ -65,10 +65,9 @@
          
         <section class="first-form"> <h2>📝 Initial Questionnaire</h2>
         
-          <!--  <p>Please answer the questions and press "Submit" to continue. 
+          <!--<p>Please answer the questions and press "Submit" to continue. 
           This may help notice and evaluate certain tendencies (if any) depending on demographic information and remind you that
-          you can only participate in the study once.</p> -->
-          
+          you can only participate in the study once.</p> --> 
        
           <form>
           <div class="input-group">  
@@ -77,13 +76,6 @@
             <input type="number" size="6" name="age" min="1" max="99" value="age" required
              oninput="if(value.length>2)value=value.slice(0,2)"> <!-- Makes sure that no more than 2 symbols are added -->
           </div>
-
-        <!-- <div class="input-group">
-            <input id="male" type="radio" name="gender" value="male" required><label for="male">Male</label><br>
-            <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label><br>
-            <input id="non-binary" type="radio" name="gender" value="Non-binary"><label for="non-binary">Non-binary</label><br>
-            <input id="other" type="radio" name="gender" value="other"><label for="other">Other</label>
-          </div> -->
 
           <div class="input-group">
             <label for="gender">Please indicate your gender</label>
@@ -114,45 +106,6 @@
               <option>No</option>
             </select>
           </div>
- 
-
-            <!--  <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
-              <label class="inline" for="salutation-mr">Mr.</label>
-              
-              <input id="salutation-mrs" name="salutation" type="radio" value="Mrs."/>
-              <label class="inline" for="salutation-mrs">Mrs.</label>
-              
-              <input id="salutation-ms" name="salutation" type="radio" value="Ms."/>
-              <label class="inline" for="salutation-ms">Ms.</label>
-            </div>
-            
-
-            <div class="input-group">
-              <label for="email">Email Address</label>
-              <input id="email" name="email" type="email"/>
-            </div>
-            
-            <div class="input-group">
-              <label for="subject">How can I help you?</label>
-              <select id="subject" name="subject">
-                <option>I have a problem.</option>
-                <option>I have a general question.</option>
-              </select>
-            </div>
-            
-            <div class="input-group">
-              <label for="message">Enter a Message</label>
-              <textarea id="message" name="message" rows="6" cols="65"></textarea>
-            </div>
-            
-            <div class="input-group">
-              <p class="group-label">Please send me:</p>
-              <input id="snacks-pizza" name="snacks" type="checkbox" value="pizza"/>
-              <label class="inline" for="snacks-pizza">Pizza</label>
-              <input id="snacks-cake" name="snacks" type="checkbox" value="cake"/>
-              <label class="inline" for="snacks-cake">Cake</label>
-            </div>
-            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>--> <!--- if we want to get any data from user like IP address or sth --->
             
             <button type="submit" class="submit">Submit</button>
           </form>
