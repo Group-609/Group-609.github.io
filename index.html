@@ -20,8 +20,8 @@
         <h1>Welcome to our video game study!</h1>
 
         <p>Thank you for taking the time to participate in our study 💗</p>
-        <p>In this page, you will find all of the information you need to participate.
-          <b>Please read everything thoroughly.</b></p>
+        <p>On this page, you will find all of the information you need to participate.
+        <b>Please read everything thoroughly.</b></p>
 
         <!--<h2 onclick="printCollectedData()">📍 Information </h2>-->
         <h2>📍 Information </h2>
@@ -50,8 +50,8 @@
         <h2>⚠️ Consent Form </h2>
 
           <p>You will be presented with two video game prototypes and a questionnaire after each prototype playthrough. 
-          Your in-game data will be recorded. All the information collected in the session 
-          (in-game and questionnaire data) will be stored until the students’ exam, which shall take place in June 2021. 
+          Your in-game behavior and location data will be recorded. All of the information collected in the session 
+          will be stored until the students’ exam, which shall take place in June 2021. 
           We may publish and discuss results from this session in our semester report, but the individual information there will be anonymous.</p>
 
           <p>The participation is voluntary, and you may withdraw at any point. In case of withdrawal, the group is obliged to
@@ -65,25 +65,16 @@
          
         <section class="first-form"> <h2>📝 Initial Questionnaire</h2>
         
-          <!--  <p>Please answer the questions and press "Submit" to continue. 
+          <!--<p>Please answer the questions and press "Submit" to continue. 
           This may help notice and evaluate certain tendencies (if any) depending on demographic information and remind you that
-          you can only participate in the study once.</p> -->
-          
+          you can only participate in the study once.</p> --> 
        
           <form>
           <div class="input-group">  
             <label for="age">Please indicate your age</label>
-            <!-- <input id="age" name="age" type="text" required> -->
             <input type="number" size="6" name="age" min="1" max="99" value="age" required
              oninput="if(value.length>2)value=value.slice(0,2)"> <!-- Makes sure that no more than 2 symbols are added -->
           </div>
-
-        <!-- <div class="input-group">
-            <input id="male" type="radio" name="gender" value="male" required><label for="male">Male</label><br>
-            <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label><br>
-            <input id="non-binary" type="radio" name="gender" value="Non-binary"><label for="non-binary">Non-binary</label><br>
-            <input id="other" type="radio" name="gender" value="other"><label for="other">Other</label>
-          </div> -->
 
           <div class="input-group">
             <label for="gender">Please indicate your gender</label>
@@ -114,45 +105,6 @@
               <option>No</option>
             </select>
           </div>
- 
-
-            <!--  <input id="salutation-mr" name="salutation" type="radio" value="Mr."/>
-              <label class="inline" for="salutation-mr">Mr.</label>
-              
-              <input id="salutation-mrs" name="salutation" type="radio" value="Mrs."/>
-              <label class="inline" for="salutation-mrs">Mrs.</label>
-              
-              <input id="salutation-ms" name="salutation" type="radio" value="Ms."/>
-              <label class="inline" for="salutation-ms">Ms.</label>
-            </div>
-            
-
-            <div class="input-group">
-              <label for="email">Email Address</label>
-              <input id="email" name="email" type="email"/>
-            </div>
-            
-            <div class="input-group">
-              <label for="subject">How can I help you?</label>
-              <select id="subject" name="subject">
-                <option>I have a problem.</option>
-                <option>I have a general question.</option>
-              </select>
-            </div>
-            
-            <div class="input-group">
-              <label for="message">Enter a Message</label>
-              <textarea id="message" name="message" rows="6" cols="65"></textarea>
-            </div>
-            
-            <div class="input-group">
-              <p class="group-label">Please send me:</p>
-              <input id="snacks-pizza" name="snacks" type="checkbox" value="pizza"/>
-              <label class="inline" for="snacks-pizza">Pizza</label>
-              <input id="snacks-cake" name="snacks" type="checkbox" value="cake"/>
-              <label class="inline" for="snacks-cake">Cake</label>
-            </div>
-            <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>--> <!--- if we want to get any data from user like IP address or sth --->
             
             <button type="submit" class="submit">Submit</button>
           </form>
@@ -210,10 +162,10 @@
 
    
         <section class="fourth-form">
-          <!-- <h2>Final feeedback</h2> -->
+          <h2>📝 Final feedback</h2>
           <form>
             <div class="input-group">
-              <label for="issuemessage">If you had experienced any technical issues, please describe them and how they influenced your gameplay.</label>
+              <label for="issuemessage">If you experienced any technical issues, please describe them and how they influenced your gameplay.</label>
               <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"
                oninput="if(value.length>5000)value=value.slice(0,5000)"></textarea>
             </div>
@@ -225,9 +177,9 @@
             </div>
 
             <div class="input-group">
-              <label for="email">Enter your e-mail here if you would like to participate in the Steam key giveaway.</label>
+              <label for="email">Enter your e-mail here if you would like to participate in the Steam key raffle.</label>
               <textarea id="email" name="email" rows="2" cols="65"
-              oninput="if(value.length>60)value=value.slice(0,60)"></textarea>
+              oninput="if(value.length>50)value=value.slice(0,50)"></textarea>
             </div>
             
             <button type="submit" class="submit">Submit</button>
@@ -235,14 +187,14 @@
         </section>  
 
         <div id="error_uploading">
-            <p>Upload failed! Please try pressing the Submit button again!</p>
+            <p style="color:red"><b>Upload failed! Please try pressing the Submit button again!</b></p>
         </div>
 
         <div id="thanks_for_participating">
-            <p>Upload of data successful! Thank you for participating in our study!</p>
+            <p style="color:green"><b>Upload of data successful! Thank you for participating in our study!</b></p>
         </div>
 
-     <!--   <button id="showGame">TestButton1 pls ignore</button>
+   <!--     <button id="showGame">TestButton1 pls ignore</button>
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
