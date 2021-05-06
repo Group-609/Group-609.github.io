@@ -43,17 +43,17 @@
           content: '';
           position:relative;
           top:11px;
-          left:9.5%;
+          left:0%;
           display:block;
           background-color:#efefef;
           height:6px;
-          width:78%;
+          width:100%;
         }
 
         /* Choice text */
         form .likert li {
           display:inline-block;
-          width:19%;
+          width:14%;
           text-align:center;
           vertical-align: top;
         }
@@ -63,7 +63,7 @@
           display:block;
           position:relative;
           top: -2px;
-          left:50%;
+          left:43%;
           cursor: pointer; 
           width: 2.3rem;
           height: 2.3rem;
@@ -81,44 +81,6 @@
           border-radius: 50%
         }
        
-
-    /*  [type="checkbox"] + label:before, [type="radio"] + label:before
-      {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0.4rem;
-          width: 1.8rem;
-          height: 1.8rem;
-          border: 0.1rem solid #d1d1d1;
-      }
-
-      [type="radio"] + label:before, [type="radio"] + label:after
-      {
-          border-radius: 50%;
-      }
-      
-    /*  [type="checkbox"]:checked + label:after,[type="radio"]:checked + label:after
-      {
-          content: '';
-          width: 0.8rem;
-          height: 0.8rem;
-          background: #9b4dca;
-          position: absolute;
-          top: 0.9rem;
-          left: 0.5rem;
-      }
-
-
-      /* For Checkbox */
-         [type="checkbox"] + label, [type="radio"] + label
-      {
-          position: relative;
-          padding-left: 2.5rem;
-          /* cursor: pointer; */
-          display: inline-block;
-      }
-
 
       /* Animation */
           input {
