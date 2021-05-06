@@ -42,7 +42,7 @@
     You will need to enter your e-mail at the end of the study if you would like to participate in the raffle, 
     which will be held at the end of May. Winners of the raffle will be contacted via e-mail.⭐</p>
 
-    <section class="info-button"> <p>If you are ready to proceed and fit the requirements, press "Continue".</p>
+    <section class="info-button"> <p>If you are ready to proceed and meet the requirements, press "Continue".</p>
           <button type="continue" class="continue" id="showConsent">Continue</button> </section>
 
 
@@ -56,18 +56,18 @@
 
           <p>The participation is voluntary, and you may withdraw at any point. In case of withdrawal, the group is obliged to
           destroy your provided data immediately once we are informed about the withdrawal. 
-          If you have any questions, write to the person that contacted you about this study or reach us via e-mail <b>med609kbh2021@create.aau.dk</b></p>
+          If you have any questions, you can reach us via e-mail <b>med609kbh2021@create.aau.dk</b></p>
 
-        <section class="consent-button"> <p><p>⚠️<b>By pressing "Continue" you agree that you have read the description of the testing and of your
-            rights as the participant presented above. You hereby voluntarily agree to participate in the study.</b>⚠️</p></p>
+        <section class="consent-button"> <p>⚠️<b>By pressing "Continue" you agree that you have read the description of the testing and of your
+            rights as the participant presented above. You hereby voluntarily agree to participate in the study.</b>⚠️</p>
           <button type="continue" class="continue" id="showFirstForm" onclick="consentBool()">Continue</button> </section>
           </section>
          
         <section class="first-form"> <h2>📝 Initial Questionnaire</h2>
         
-        <p>Please answer the three questions below and press "Submit" to continue. 
+          <!--  <p>Please answer the questions and press "Submit" to continue. 
           This may help notice and evaluate certain tendencies (if any) depending on demographic information and remind you that
-          you can only participate in the study once.</p>
+          you can only participate in the study once.</p> -->
           
        
           <form>
@@ -230,17 +230,20 @@
           <form>
             <div class="input-group">
               <label for="issuemessage">If you had experienced any technical issues, please describe them and how they influenced your gameplay.</label>
-              <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"></textarea>
+              <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"
+               oninput="if(value.length>5000)value=value.slice(0,5000)"></textarea>>
             </div>
 
             <div class="input-group">
               <label for="feedbackmessage">If you have any additional comments, please write them down here.</label>
-              <textarea id="feedbackmessage" name="feedbackmessage" rows="6" cols="65"></textarea>
+              <textarea id="feedbackmessage" name="feedbackmessage" rows="6" cols="65"
+               oninput="if(value.length>5000)value=value.slice(0,5000)"></textarea>>
             </div>
 
             <div class="input-group">
               <label for="email">Enter your e-mail here if you would like to participate in the Steam key giveaway.</label>
-              <textarea id="email" name="email" rows="2" cols="65"></textarea>
+              <textarea id="email" name="email" rows="2" cols="65"
+              oninput="if(value.length>100)value=value.slice(0,100)"></textarea>
             </div>
             
             <button type="submit" class="submit">Submit</button>
@@ -255,7 +258,7 @@
             <p>Upload of data successful! Thank you for participating in our study!</p>
         </div>
 
-     <!--   <button id="showGame">TestButton1 pls ignore</button>
+        <button id="showGame">TestButton1 pls ignore</button>
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
