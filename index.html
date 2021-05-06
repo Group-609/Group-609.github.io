@@ -23,7 +23,8 @@
         <p>In this page, you will find all of the required information to participate.
           <b>Please read everything thoroughly.</b></p>
 
-        <h2 onclick="printCollectedData()">📍 Information </h2>
+        <!--<h2 onclick="printCollectedData()">📍 Information </h2>-->
+        <h2>📍 Information </h2>
 
           <p>We are group 609 from the final semester of Medialogy Bachelor’s programme at Aalborg University Copenhagen. This is a
           study on video games for our semester project. The whole procedure should take 30-40 minutes, including 15-25 minutes of gameplay.</p>
@@ -203,7 +204,7 @@
           
           <h2>📝 First gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>first prototype.</b></p>
-          <p><b>Make sure to answer the questions individually.</b></p>
+          <p style="color:red"><b>Make sure to answer the questions individually.</b></p>
         
           <form> 
           <iframe src="questionnaire.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
@@ -215,7 +216,7 @@
         <section class="third-form">
           <h2>📝 Second gameplay survey</h2>
           <p>Please answer the following questions based on your experience after playing the <b>second prototype only.</b></p>
-          <p><b>Make sure to answer the questions individually.</b></p>
+          <p style="color:red"><b>Make sure to answer the questions individually.</b></p>
          
           <form>
             <iframe src="questionnaire.html"
@@ -256,7 +257,7 @@
             <p>Upload of data successful! Thank you for participating in our study!</p>
         </div>
 
-      <!--  <button id="showGame">TestButton1 pls ignore</button>
+     <!--   <button id="showGame">TestButton1 pls ignore</button>
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
@@ -268,4 +269,5 @@
     <script src="showPartsOfTest.js"></script> 
     <script> function exitWarning() { return "You are about to exit the study. If you exit, all of the data will be lost.";} </script>
     <script> function removeExitWarning() { window.onbeforeunload = null; }</script>
+    
   </body>
