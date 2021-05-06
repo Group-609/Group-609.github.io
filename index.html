@@ -72,7 +72,6 @@
           <form>
           <div class="input-group">  
             <label for="age">Please indicate your age</label>
-            <!-- <input id="age" name="age" type="text" required> -->
             <input type="number" size="6" name="age" min="1" max="99" value="age" required
              oninput="if(value.length>2)value=value.slice(0,2)"> <!-- Makes sure that no more than 2 symbols are added -->
           </div>
@@ -163,10 +162,10 @@
 
    
         <section class="fourth-form">
-          <!-- <h2>Final feeedback</h2> -->
+          <h2>📝 Final feedback</h2>
           <form>
             <div class="input-group">
-              <label for="issuemessage">If you had experienced any technical issues, please describe them and how they influenced your gameplay.</label>
+              <label for="issuemessage">If you experienced any technical issues, please describe them and how they influenced your gameplay.</label>
               <textarea id="issuemessage" name="issuemessage" rows="6" cols="65"
                oninput="if(value.length>5000)value=value.slice(0,5000)"></textarea>
             </div>
@@ -178,9 +177,9 @@
             </div>
 
             <div class="input-group">
-              <label for="email">Enter your e-mail here if you would like to participate in the Steam key giveaway.</label>
+              <label for="email">Enter your e-mail here if you would like to participate in the Steam key raffle.</label>
               <textarea id="email" name="email" rows="2" cols="65"
-              oninput="if(value.length>60)value=value.slice(0,60)"></textarea>
+              oninput="if(value.length>50)value=value.slice(0,50)"></textarea>
             </div>
             
             <button type="submit" class="submit">Submit</button>
@@ -195,7 +194,7 @@
             <p>Upload of data successful! Thank you for participating in our study!</p>
         </div>
 
-     <!--   <button id="showGame">TestButton1 pls ignore</button>
+        <button id="showGame">TestButton1 pls ignore</button>
         <button id="ShowSecondForm">TestButton2 pls ignore</button>
         <button id="showGameAgain">TestButton3 pls ignore</button>
         <button id="showLastForm">TestButton4 pls ignore</button>
