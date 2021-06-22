@@ -11,6 +11,7 @@ window.document.addEventListener('showGame', handleEventShowGame, false);
 window.document.addEventListener('showSecondForm', handleEventShowSecondForm, false);
 window.document.addEventListener('showGameAgain', handleEventShowGameAgain, false);
 window.document.addEventListener('showLastForm', handleEventShowLastForm, false);
+window.document.addEventListener('showFinalForm', handleEventShowFinalForm, false);
 
 $(".consent-form").hide();
 $(".first-form").hide();
@@ -67,6 +68,12 @@ function handleEventShowLastForm(e) {
   $(".third-form").show(hideShowTime);  
   console.log(e.detail);
   game2Data = JSON.parse(e.detail);
+}
+
+function handleEventShowFinalForm(e) {
+  //$(".third-form").hide(hideShowTime); 
+  $(".fourth-form").show(hideShowTime);
+  console.log(e.detail);
 }
 
 
